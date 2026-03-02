@@ -1,187 +1,117 @@
 # @zovo/types-webext
 
-Comprehensive TypeScript type definitions for browser extensions, supporting Chrome, Firefox, Safari, and Edge with cross-browser compatibility.
+Comprehensive TypeScript type definitions for browser extensions across Chrome, Firefox, Safari, and Edge.
 
 ## Packages
 
-| Package | Description | NPM |
-|---------|-------------|-----|
-| `@zovo/types-chrome-extension` | Chrome Extensions (Manifest V3) | [View](https://npmjs.com/package/zovo/types-chrome-extension) |
-| `@zovo/types-firefox-extension` | Firefox WebExtensions | [View](https://npmjs.com/package/zovo/types-firefox-extension) |
-| `@zovo/types-safari-extension` | Safari App Extensions | [View](https://npmjs.com/package/zovo/types-safari-extension) |
-| `@zovo/types-edge-extension` | Microsoft Edge Extensions | [View](https://npmjs.com/package/zovo/types-edge-extension) |
-| `@zovo/types-webext-common` | Cross-browser compatible types | [View](https://npmjs.com/package/zovo/types-webext-common) |
-| `@zovo/types-webext-full` | Union types with browser discriminators | [View](https://npmjs.com/package/zovo/types-webext-full) |
-
-## Features
-
-- ✅ **Chrome, Firefox, Safari, Edge** support
-- ✅ **Cross-browser compatibility** utilities
-- ✅ **Better than @types/chrome** - more accurate, Promise-based APIs
-- ✅ **Auto-generated** from browser source definitions
-- ✅ **Weekly updates** - stays current with browser releases
+| Package | Description | Version |
+|---------|-------------|---------|
+| `@zovo/types-chrome-extension` | Chrome/Chromium APIs | [![npm version](https://img.shields.io/npm/v/@zovo/types-chrome-extension)](https://npmjs.com/package/@zovo/types-chrome-extension) |
+| `@zovo/types-firefox-extension` | Firefox WebExtension APIs | [![npm version](https://img.shields.io/npm/v/@zovo/types-firefox-extension)](https://npmjs.com/package/@zovo/types-firefox-extension) |
+| `@zovo/types-safari-extension` | Safari App Extension APIs | [![npm version](https://img.shields.io/npm/v/@zovo/types-safari-extension)](https://npmjs.com/package/@zovo/types-safari-extension) |
+| `@zovo/types-edge-extension` | Microsoft Edge APIs | [![npm version](https://img.shields.io/npm/v/@zovo/types-edge-extension)](https://npmjs.com/package/@zovo/types-edge-extension) |
+| `@zovo/types-webext-common` | Cross-browser intersection | [![npm version](https://img.shields.io/npm/v/@zovo/types-webext-common)](https://npmjs.com/package/@zovo/types-webext-common) |
+| `@zovo/types-webext-full` | Full union of all browsers | [![npm version](https://img.shields.io/npm/v/@zovo/types-webext-full)](https://npmjs.com/package/@zovo/types-webext-full) |
+| `@zovo/type-helpers` | Advanced TypeScript utilities | [![npm version](https://img.shields.io/npm/v/@zovo/type-helpers)](https://npmjs.com/package/@zovo/type-helpers) |
 
 ## Quick Start
 
 ```bash
-# Install
+# Install your preferred package
 npm install @zovo/types-chrome-extension
-# or for cross-browser
-npm install @zovo/types-webext-common
+# or
+npm install @zovo/types-firefox-extension
 ```
 
-## Usage
+### VS Code
 
-### Chrome Extension
+Add to your `tsconfig.json`:
 
-```typescript
-import type { chrome } from '@zovo/types-chrome-extension';
-
-// Get active tab - typed result!
-const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-const tab = tabs[0];
-
-// Storage - Promise-based
-await chrome.storage.local.set({ myKey: 'myValue' });
-const result = await chrome.storage.local.get('myKey');
-```
-
-### Firefox Extension
-
-```typescript
-import type { browser } from '@zovo/types-firefox-extension';
-
-// Same API, different namespace
-const tabs = await browser.tabs.query({ active: true });
-```
-
-### Cross-Browser
-
-```typescript
-import type { chrome } from '@zovo/types-chrome-extension';
-
-// Use @zovo/types-webext-common for types that work everywhere
-// Use feature detection for browser-specific APIs
-if (typeof chrome.sidePanel !== 'undefined') {
-  // Edge/Chrome only
+```json
+{
+  "compilerOptions": {
+    "types": ["@zovo/types-chrome-extension"]
+  }
 }
 ```
 
-## VS Code Improvements
+### Usage
 
-This package provides IntelliSense improvements over `@types/chrome`:
+```typescript
+import { chrome } from '@zovo/types-chrome-extension';
 
-- **Promise-based APIs** - `await chrome.tabs.query()` instead of callbacks
-- **Typed messages** - Type-safe runtime.sendMessage()
-- **Manifest validation** - Compile-time manifest.json checking
-- **Event typing** - Proper parameter inference for event listeners
+// Query tabs
+const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
 
-See [vscode-improvements.json](vscode-improvements.json) for full details.
+// Use storage
+await chrome.storage.local.set({ key: 'value' });
+const result = await chrome.storage.local.get('key');
 
-## API Sources
+// Send messages
+chrome.runtime.sendMessage({ type: 'GREETING' }, (response) => {
+  console.log(response);
+});
+```
 
-Types are auto-generated from:
+## Features
 
-- **Chrome**: chromium.googlesource.com IDL files
-- **Firefox**: mozilla-central WebExtension schemas
-- **Safari**: WebKit + Apple documentation
-- **Edge**: Chrome APIs + Edge-specific extensions
+- ✅ **Complete Type Coverage** - All browser extension APIs fully typed
+- ✅ **Promise Support** - Both callback and Promise-based APIs
+- ✅ **Cross-Browser** - Common types for Chrome, Firefox, Safari, Edge
+- ✅ **MV3 Ready** - Manifest V3 support including service workers
+- ✅ **Advanced Types** - Utility types for better developer experience
+- ✅ **Auto-Updated** - Weekly updates from browser source
+
+## Documentation
+
+- [Migration Guide](docs/MIGRATION.md) - Migrating from @types/chrome
+- [API Reference](docs/) - Full API documentation
+- [Type Utilities](docs/TYPES.md) - Advanced TypeScript types
+
+## CI/CD
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+| Workflow | Trigger | Description |
+|----------|---------|-------------|
+| CI | Push/PR | Runs tests, type checks, and builds |
+| Weekly Update | Weekly (Sunday) | Auto-updates API definitions |
+| Release | Push to main | Publishes packages to npm |
+
+### Required Secrets
+
+To enable publishing, add these secrets to your GitHub repository:
+
+- `NPM_TOKEN` - npm access token with package publish permissions
+- `GITHUB_TOKEN` - Automatically provided by GitHub
 
 ## Development
 
 ```bash
+# Clone the repo
+git clone https://github.com/theluckystrike/zovo-types-webext.git
+cd zovo-types-webext
+
 # Install dependencies
 npm install
 
-# Run full pipeline
-npm run build
+# Run quality validation
+npm run validate
+
+# Generate documentation
+npm run docs
 
 # Run tests
-npm run test
+npm test
 
-# Generate diff reports
-npm run diff
-
-# Generate changelog
-npm run changelog
-
-# Weekly loop (continuous)
-npm run loop
+# Full build
+npm run build
 ```
 
-## Outputs
+## Contributing
 
-After running the pipeline:
-
-```
-├── packages/
-│   ├── types-chrome-extension/    # Chrome-specific types
-│   ├── types-firefox-extension/   # Firefox-specific types
-│   ├── types-safari-extension/    # Safari-specific types
-│   ├── types-edge-extension/     # Edge-specific types
-│   ├── types-webext-common/       # Intersection of all browsers
-│   └── types-webext-full/         # Union with discriminators
-├── diff-reports/                  # API change reports
-├── blog-posts/                    # "What's New" posts
-├── cross-browser-compatibility.json  # Machine-readable compatibility
-├── vscode-improvements.json       # IDE enhancements
-└── CHANGELOG.md                   # Version history
-```
-
-## Bonus Outputs
-
-### Browser API Diff Reports
-
-Track what changed between browser versions:
-
-```bash
-npm run diff
-# Generates diff-reports/chrome-diff-120-121.json
-```
-
-### Cross-Browser Compatibility JSON
-
-Machine-readable compatibility data:
-
-```bash
-npm run compat
-# Generates cross-browser-compatibility.json
-```
-
-### "What's New" Blog Posts
-
-Auto-generated release notes per browser:
-
-```bash
-npm run blog
-# Generates blog-posts/chrome-whats-new-121.md
-```
-
-### VS Code IntelliSense
-
-Enhanced IDE support:
-
-```bash
-npm run vscode
-# Generates .vscode/settings.json and snippets
-```
-
-## Comparison with @types/chrome
-
-| Feature | @types/chrome | @zovo/types-* |
-|---------|---------------|---------------|
-| Promise support | ❌ Callbacks only | ✅ Native async |
-| Firefox support | ❌ Chrome only | ✅ Full support |
-| Safari support | ❌ | ✅ |
-| Edge support | ❌ | ✅ |
-| Cross-browser types | ❌ | ✅ Common + Full |
-| Auto-updates | ❌ Manual | ✅ Weekly |
-| Type accuracy | Basic | Enhanced |
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
 
 ## License
 
 MIT
-
-## Contributing
-
-PRs welcome! This is an automated pipeline - types are generated from browser sources.
