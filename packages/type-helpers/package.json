@@ -1,0 +1,21 @@
+{
+  "name": "@zovo/type-helpers",
+  "version": "1.0.0",
+  "description": "Advanced TypeScript utilities for browser extensions",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "browser-extension",
+    "chrome",
+    "firefox"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -11,15 +11,20 @@
     "parse": "node scripts/parse-definitions.js",
     "generate": "node scripts/generate-types.js",
     "compile": "npm run compile --workspaces",
-    "test": "node scripts/run-tests.js",
+    "test": "node agents/agent-3-tests.js",
     "diff": "node scripts/generate-diff.js",
     "changelog": "node scripts/generate-changelog.js",
     "blog": "node scripts/generate-blog-posts.js",
     "compat": "node scripts/generate-compatibility.js",
     "build": "npm run fetch && npm run parse && npm run generate && npm run compile",
     "publish": "npm run build && npm run test && npm run changelog && node scripts/publish.js",
-    "loop": "node scripts/weekly-loop.js",
-    "vscode": "node scripts/vscode-improvements.js"
+    "loop": "npm run validate && npm run docs && npm run test && echo 'Weekly loop complete'",
+    "vscode": "node scripts/vscode-improvements.js",
+    "lint": "echo 'No linter configured yet'",
+    "typecheck": "tsc --noEmit --project packages/types-chrome-extension/tsconfig.json",
+    "validate": "node agents/agent-1-validator.js",
+    "docs": "node agents/agent-2-docs.js",
+    "prepublishOnly": "npm run loop"
   },
   "devDependencies": {
     "typescript": "^5.3.0",

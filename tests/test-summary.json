@@ -1,0 +1,43 @@
+{
+  "testFramework": "Jest with ts-jest",
+  "coverageTargets": {
+    "chrome.tabs": [
+      "query",
+      "create",
+      "update",
+      "remove",
+      "onUpdated",
+      "onCreated"
+    ],
+    "chrome.storage": [
+      "get",
+      "set",
+      "remove",
+      "clear",
+      "onChanged"
+    ],
+    "chrome.runtime": [
+      "getManifest",
+      "getURL",
+      "sendMessage",
+      "onMessage",
+      "onInstalled"
+    ],
+    "chrome.scripting": [
+      "executeScript",
+      "insertCSS",
+      "removeCSS"
+    ],
+    "chrome.events": [
+      "addListener",
+      "removeListener",
+      "hasListener",
+      "getRules"
+    ],
+    "cross-browser": [
+      "common APIs work across Firefox/Chrome"
+    ]
+  },
+  "running": "npm test",
+  "coverage": "npm run test:coverage"
+}

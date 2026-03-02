@@ -1,0 +1,25 @@
+# name: Issue Triage
+
+on:
+  issues:
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check for type issues
+      run: |
+        # Quick type check on PR changes
+        npx tsc --noEmit --project packages/types-chrome-extension/tsconfig.json || true
+    
+    - name: Add triage label
+      if: github.event_name == 'issues'
+      uses: actions-ecosystem/action-add-labels@v1
+      with:
+        labels: 'needs-triage'
+        github_token: ${{ secrets.GITHUB_TOKEN }}

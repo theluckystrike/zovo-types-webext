@@ -1,0 +1,52 @@
+{
+  "chrome": {
+    "tabs": [
+      "query",
+      "get",
+      "create",
+      "update",
+      "remove",
+      "executeScript"
+    ],
+    "storage": [
+      "get",
+      "set",
+      "remove",
+      "clear"
+    ],
+    "runtime": [
+      "getManifest",
+      "getURL",
+      "sendMessage",
+      "onMessage"
+    ],
+    "action": [
+      "setTitle",
+      "setIcon",
+      "setPopup",
+      "onClicked"
+    ]
+  },
+  "firefox": {
+    "tabs": [
+      "query",
+      "get",
+      "create",
+      "update",
+      "remove",
+      "executeScript"
+    ],
+    "storage": [
+      "get",
+      "set",
+      "remove",
+      "clear"
+    ],
+    "runtime": [
+      "getManifest",
+      "getURL",
+      "sendMessage",
+      "onMessage"
+    ]
+  }
+}

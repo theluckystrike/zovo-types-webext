@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-03-02T09:30:08.146Z",
+  "rules": {
+    "requiredHeaders": true,
+    "strictTyping": true,
+    "nullableHandling": true,
+    "callbackPatterns": true,
+    "promiseReturns": true,
+    "eventTypes": true,
+    "permissionAnnotations": true
+  },
+  "results": {
+    "passed": [],
+    "warnings": [],
+    "errors": [
+      {
+        "package": "types-chrome-extension",
+        "file": "index.d.ts",
+        "msg": "File has no exports"
+      },
+      {
+        "package": "types-edge-extension",
+        "file": "index.d.ts",
+        "msg": "File has no exports"
+      },
+      {
+        "package": "types-firefox-extension",
+        "file": "index.d.ts",
+        "msg": "File has no exports"
+      },
+      {
+        "package": "types-safari-extension",
+        "file": "index.d.ts",
+        "msg": "File has no exports"
+      },
+      {
+        "package": "types-webext-common",
+        "file": "index.d.ts",
+        "msg": "File has no exports"
+      }
+    ],
+    "fixes": []
+  },
+  "summary": {
+    "totalPackages": 6,
+    "totalWarnings": 0,
+    "totalErrors": 5,
+    "fixable": 0
+  }
+}

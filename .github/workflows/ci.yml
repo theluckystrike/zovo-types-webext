@@ -1,0 +1,148 @@
+# name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Lint
+      run: npm run lint
+    
+    - name: Type check
+      run: npm run typecheck
+    
+    - name: Run tests
+      run: npm test
+    
+    - name: Build packages
+      run: npm run build
+    
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./coverage/lcov.info
+        flags: unittests
+
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run quality validation
+      run: |
+        npm install
+        node agents/agent-1-validator.js
+    
+    - name: Check for critical errors
+      run: |
+        if [ $(jq '.results.errors | length' quality-validation-report.json) -gt 0 ]; then
+          echo "Critical errors found!"
+          cat quality-validation-report.json
+          exit 1
+        fi
+
+  publish:
+    needs: [test, quality]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        registry-url: 'https://registry.npmjs.org'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build
+      run: npm run build
+    
+    - name: Publish @zovo/types-chrome-extension
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/types-chrome-extension
+    
+    - name: Publish @zovo/types-firefox-extension
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/types-firefox-extension
+    
+    - name: Publish @zovo/types-safari-extension
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/types-safari-extension
+    
+    - name: Publish @zovo/types-edge-extension
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/types-edge-extension
+    
+    - name: Publish @zovo/types-webext-common
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/types-webext-common
+    
+    - name: Publish @zovo/types-webext-full
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/types-webext-full
+    
+    - name: Publish @zovo/type-helpers
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      working-directory: packages/type-helpers
+
+  release:
+    needs: [publish]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Generate release notes
+      run: |
+        echo "# @zovo/types-webext Release" > release-notes.md
+        echo "" >> release-notes.md
+        echo "## Changes" >> release-notes.md
+        cat docs/CHANGELOG-API.md >> release-notes.md
+    
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.run_number }}
+        release_name: Release v${{ github.run_number }}
+        body_path: release-notes.md
+        draft: false
+        prerelease: false

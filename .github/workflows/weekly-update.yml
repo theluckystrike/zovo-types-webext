@@ -1,0 +1,50 @@
+# name: Weekly API Update
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run weekly loop
+      run: npm run loop
+    
+    - name: Check for changes
+      id: changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "::set-output name=has_changes::true"
+        else
+          echo "::set-output name=has_changes::false"
+        fi
+    
+    - name: Create Pull Request
+      if: steps.changes.outputs.has_changes == 'true'
+      uses: actions/checkout@v4
+      with:
+        ref: develop
+        fetch-depth: 0
+    
+    - name: Commit and push
+      if: steps.changes.outputs.has_changes == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add -A
+        git commit -m "chore: Weekly API type definitions update"
+        git push origin develop
