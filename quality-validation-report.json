@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T10:03:27.776Z",
+  "timestamp": "2026-03-02T10:12:56.019Z",
   "rules": {
     "requiredHeaders": true,
     "strictTyping": true,
@@ -16,7 +16,7 @@
     "fixes": []
   },
   "summary": {
-    "totalPackages": 7,
+    "totalPackages": 12,
     "totalWarnings": 0,
     "totalErrors": 0,
     "fixable": 0
