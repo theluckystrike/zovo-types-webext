@@ -1,0 +1,27 @@
+{
+  "name": "@zovo/crx-permission-analyzer",
+  "version": "1.0.0",
+  "description": "Audit Chrome extension permissions with risk assessment",
+  "main": "dist/index.js",
+  "bin": {
+    "crx-permission-analyzer": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "permissions",
+    "security",
+    "audit"
+  ],
+  "license": "MIT"
+}

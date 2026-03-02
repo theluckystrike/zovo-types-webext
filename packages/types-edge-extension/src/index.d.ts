@@ -1,7 +1,7 @@
 /**
  * @zovo/types-edge-extension
  * Comprehensive TypeScript definitions for Microsoft Edge Extensions
- * Version: undefined
+ * Version: 1.0.0
  */
 
 /// <reference path="./namespaces/alarms.d.ts" />

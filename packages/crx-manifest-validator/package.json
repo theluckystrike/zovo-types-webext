@@ -1,0 +1,25 @@
+{
+  "name": "@zovo/crx-manifest-validator",
+  "version": "1.0.0",
+  "description": "Validate manifest.json against Chrome, Firefox, Safari, and Edge",
+  "bin": {
+    "crx-manifest-validator": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "manifest",
+    "validation",
+    "cross-browser"
+  ],
+  "license": "MIT"
+}

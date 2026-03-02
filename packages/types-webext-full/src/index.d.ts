@@ -1,7 +1,7 @@
 /**
  * @zovo/types-webext-full
  * Complete WebExtension TypeScript definitions with browser discriminators
- * Version: undefined
+ * Version: 1.0.0
  */
 
 export type BrowserType = 'chrome' | 'firefox' | 'safari' | 'edge';

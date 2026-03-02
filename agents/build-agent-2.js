@@ -1,508 +1,327 @@
-/**
- * AGENT 2: crx-manifest-validator
- * Validate manifest.json against all browsers
- */
-
+// Agent 2: Build crx-permission-analyzer
 const fs = require('fs');
 const path = require('path');
 
-const PROJECT_ROOT = '/Users/mike/zovo-types/tools/crx-manifest-validator';
+const projectRoot = '/Users/mike/zovo-types/packages/crx-permission-analyzer';
 
-console.log('🤖 AGENT 2: Building crx-manifest-validator\n');
-console.log('='.repeat(60));
+console.log('Building crx-permission-analyzer...');
 
 // Create directory structure
 const dirs = ['src', 'tests/fixtures', '.github/workflows'];
-dirs.forEach(d => fs.mkdirSync(path.join(PROJECT_ROOT, d), { recursive: true }));
+dirs.forEach(d => {
+  const dir = path.join(projectRoot, d);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+});
 
 // package.json
-const packageJson = {
-  name: 'crx-manifest-validator',
-  version: '1.0.0',
-  description: 'Validate manifest.json against all browser stores',
-  main: 'dist/index.js',
-  bin: {
-    'crx-manifest-validator': './dist/cli.js'
+const pkgJson = {
+  "name": "@zovo/crx-permission-analyzer",
+  "version": "1.0.0",
+  "description": "Audit Chrome extension permissions with risk assessment",
+  "main": "dist/index.js",
+  "bin": { "crx-permission-analyzer": "./dist/cli.js" },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
   },
-  scripts: {
-    build: 'tsc',
-    test: 'jest',
-    prepublish: 'npm run build'
+  "dependencies": {
+    "commander": "^11.0.0"
   },
-  dependencies: {
-    'commander': '^11.0.0',
-    'chalk': '^4.1.0'
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
   },
-  devDependencies: {
-    '@types/node': '^20.0.0',
-    'typescript': '^5.0.0'
-  },
-  keywords: ['chrome-extension', 'manifest', 'validator', 'cws'],
-  license: 'MIT'
+  "keywords": ["chrome-extension", "permissions", "security", "audit"],
+  "license": "MIT"
+};
+fs.writeFileSync(path.join(projectRoot, 'package.json'), JSON.stringify(pkgJson, null, 2));
+
+// Permission database
+const permissionsDb = {
+  "tabs": { risk: "medium", reason: "Access to all tab URLs and titles", cwsWarning: "Requires prominent disclosure" },
+  "activeTab": { risk: "low", reason: "Access only when user invokes extension", cwsWarning: null },
+  "storage": { risk: "low", reason: "Local storage access", cwsWarning: null },
+  "cookies": { risk: "medium", reason: "Read/write cookies across sites", cwsWarning: "Requires justification" },
+  "history": { risk: "high", reason: "Full browsing history access", cwsWarning: "Strict review required" },
+  "bookmarks": { risk: "medium", reason: "Read/write bookmarks", cwsWarning: "Requires disclosure" },
+  "clipboardRead": { risk: "high", reason: "Read clipboard contents", cwsWarning: "CWS rejection likely" },
+  "clipboardWrite": { risk: "medium", reason: "Write to clipboard", cwsWarning: "Requires disclosure" },
+  "geolocation": { risk: "high", reason: "Access user location", cwsWarning: "Requires prominent disclosure" },
+  "notifications": { risk: "low", reason: "Show notifications", cwsWarning: null },
+  "webRequest": { risk: "high", reason: "Intercept/modify network requests", cwsWarning: "Strict review, may require external hosting" },
+  "webRequestBlocking": { risk: "high", reason: "Block network requests", cwsWarning: "CWS rejection likely" },
+  "declarativeNetRequest": { risk: "medium", reason: "Block requests declaratively", cwsWarning: "Less strict than webRequest" },
+  "scripting": { risk: "medium", reason: "Execute scripts in pages", cwsWarning: "Requires disclosure" },
+  "debugger": { risk: "critical", reason: "Full debugging capabilities", cwsWarning: "CWS rejection guaranteed" },
+  "management": { risk: "medium", reason: "Manage other extensions", cwsWarning: "Requires strong justification" },
+  "identity": { risk: "medium", reason: "OAuth functionality", cwsWarning: null },
+  "idle": { risk: "low", reason: "Detect user idle state", cwsWarning: null },
+  "power": { risk: "low", reason: "Manage power settings", cwsWarning: null },
+  "system": { risk: "medium", reason: "System information", cwsWarning: null },
+  "topSites": { risk: "medium", reason: "Access browsing history top sites", cwsWarning: "Requires disclosure" },
+  "downloads": { risk: "medium", reason: "Manage downloads", cwsWarning: null },
+  "downloads.open": { risk: "high", reason: "Open downloaded files", cwsWarning: "Strict review" },
+  "pageCapture": { risk: "medium", reason: "Save pages as MHTML", cwsWarning: null },
+  "tabCapture": { risk: "high", reason: "Capture tab content", cwsWarning: "Requires strong justification" },
+  "privacy": { risk: "medium", reason: "Control privacy settings", cwsWarning: null },
+  "sessions": { risk: "medium", reason: "Access recently closed tabs", cwsWarning: null },
+  "contentSettings": { risk: "high", reason: "Change content settings (cookies, JS, etc)", cwsWarning: "Strict review" },
+  "proxy": { risk: "high", reason: "Manage proxy settings", cwsWarning: "CWS rejection likely" },
+  "vpnProvider": { risk: "critical", reason: "VPN functionality", cwsWarning: "Not allowed on CWS" }
 };
 
-fs.writeFileSync(path.join(PROJECT_ROOT, 'package.json'), JSON.stringify(packageJson, null, 2));
-console.log('✅ package.json');
+// src/core.ts
+const coreTs = `import * as fs from 'fs';
+import * as path from 'path';
 
-// tsconfig.json
-const tsconfig = {
-  compilerOptions: {
-    target: 'ES2020',
-    module: 'commonjs',
-    outDir: './dist',
-    rootDir: './src',
-    strict: true
-  },
-  include: ['src/**/*']
-};
+const PERMISSIONS_DB = ${JSON.stringify(permissionsDb, null, 2)};
 
-fs.writeFileSync(path.join(PROJECT_ROOT, 'tsconfig.json'), JSON.stringify(tsconfig, null, 2));
-console.log('✅ tsconfig.json');
-
-// src/core.ts - Core validation logic
-const coreCode = `export type Browser = 'chrome' | 'firefox' | 'safari' | 'edge';
-
-export interface ValidationIssue {
-  type: 'error' | 'warning' | 'info';
-  message: string;
-  field?: string;
-  browser?: Browser;
-  fix?: string;
+export interface Permission {
+  name: string;
+  risk: 'low' | 'medium' | 'high' | 'critical';
+  reason: string;
+  cwsWarning: string | null;
+  required: boolean;
 }
 
-export interface ValidationResult {
-  valid: boolean;
-  issues: ValidationIssue[];
-  manifestVersion: number;
-  browserSupport: Record<Browser, { supported: boolean; issues: ValidationIssue[] }>;
+export interface HostPermission {
+  pattern: string;
+  risk: 'low' | 'medium' | 'high';
+  reason: string;
 }
 
-// Browser-specific requirements
-const BROWSER_REQUIREMENTS: Record<Browser, {
-  minManifestVersion: number;
-  requiredFields: string[];
-  forbiddenPermissions: string[];
-  warnings: string[];
-}> = {
-  chrome: {
-    minManifestVersion: 3,
-    requiredFields: ['manifest_version', 'name', 'version', 'description'],
-    forbiddenPermissions: [],
-    warnings: ['tabs permission now requires activeTab for most use cases']
-  },
-  firefox: {
-    minManifestVersion: 2,
-    requiredFields: ['manifest_version', 'name', 'version'],
-    forbiddenPermissions: ['scripting'],  // Different in Firefox
-    warnings: ['Firefox still supports MV2 with some restrictions']
-  },
-  safari: {
-    minManifestVersion: 3,
-    requiredFields: ['manifest_version', 'name', 'version'],
-    forbiddenPermissions: [],
-    warnings: ['Safari requires additional App Store setup']
-  },
-  edge: {
-    minManifestVersion: 3,
-    requiredFields: ['manifest_version', 'name', 'version', 'description'],
-    forbiddenPermissions: [],
-    warnings: ['Edge is Chromium-based, mostly compatible with Chrome']
-  }
-};
+export interface AuditReport {
+  permissions: Permission[];
+  hostPermissions: HostPermission[];
+  overallRisk: 'low' | 'medium' | 'high' | 'critical';
+  totalPermissions: number;
+  riskyPermissions: number;
+  cwsRejectionRisk: boolean;
+  recommendations: string[];
+}
 
-// Permission risk levels
-const PERMISSION_RISKS: Record<string, { level: 'high' | 'medium' | 'low'; message: string }> = {
-  '<all_urls>': { level: 'high', message: 'Access to all websites - may reduce trust' },
-  'cookies': { level: 'medium', message: 'Can read/modify cookies' },
-  'webRequest': { level: 'high', message: 'Can intercept/modify network requests' },
-  'webRequestBlocking': { level: 'high', message: 'Can block network requests' },
-  'history': { level: 'high', message: 'Access to browsing history' },
-  'tabs': { level: 'medium', message: 'Access to tab URLs and titles - consider activeTab' },
-  'activeTab': { level: 'low', message: 'Limited to current tab when clicked' },
-  'storage': { level: 'low', message: 'Local storage - generally safe' },
-  'alarms': { level: 'low', message: 'Scheduling capabilities' },
-  'contextMenus': { level: 'low', message: 'Context menu integration' },
-  'notifications': { level: 'low', message: 'User notifications' },
-  'bookmarks': { level: 'medium', message: 'Access to bookmarks' },
-  'clipboardRead': { level: 'medium', message: 'Can read clipboard' },
-  'clipboardWrite': { level: 'low', message: 'Can write to clipboard' },
-  'geolocation': { level: 'medium', message: 'Access to user location' },
-  'downloads': { level: 'medium', message: 'Can manage downloads' },
-  'management': { level: 'medium', message: 'Can manage other extensions' },
-  'privacy': { level: 'medium', message: 'Can modify privacy settings' },
-  'proxy': { level: 'high', message: 'Can control proxy settings' },
-  'declarativeNetRequest': { level: 'medium', message: 'MV3 replacement for webRequest blocking' }
-};
-
-export function validateManifest(manifest: any, browsers: Browser[] = ['chrome', 'firefox', 'safari', 'edge']): ValidationResult {
-  const issues: ValidationIssue[] = [];
-  
-  // Basic validation
-  if (!manifest) {
-    issues.push({ type: 'error', message: 'Manifest is empty or invalid JSON' });
-    return { valid: false, issues, manifestVersion: 0, browserSupport: {} };
-  }
-  
-  const manifestVersion = manifest.manifest_version;
-  
-  // Check manifest version
-  if (!manifestVersion) {
-    issues.push({ type: 'error', message: 'manifest_version is required' });
-  } else if (manifestVersion !== 2 && manifestVersion !== 3) {
-    issues.push({ type: 'error', message: 'manifest_version must be 2 or 3' });
-  }
-  
-  // Required fields
-  if (!manifest.name) {
-    issues.push({ type: 'error', message: 'name is required' });
-  } else if (manifest.name.length > 45) {
-    issues.push({ type: 'warning', message: 'name should be 45 characters or less for CWS' });
-  }
-  
-  if (!manifest.version) {
-    issues.push({ type: 'error', message: 'version is required' });
-  } else if (!/^\\d+\\.\\d+(\\.\\d+)?$/.test(manifest.version)) {
-    issues.push({ type: 'warning', message: 'version should follow semver (e.g., 1.0.0)' });
-  }
-  
-  if (!manifest.description && manifestVersion === 3) {
-    issues.push({ type: 'warning', message: 'description is recommended for MV3' });
-  }
-  
-  // Check permissions
-  const permissions = manifest.permissions || [];
-  const hostPermissions = manifest.host_permissions || [];
-  const allPermissions = [...permissions, ...hostPermissions];
-  
-  allPermissions.forEach(perm => {
-    if (PERMISSION_RISKS[perm]) {
-      const risk = PERMISSION_RISKS[perm];
-      issues.push({
-        type: risk.level === 'high' ? 'warning' : 'info',
-        message: \`Permission '\${perm}': \${risk.message}\`,
-        field: 'permissions'
-      });
-    }
-  });
-  
-  // Check for dangerous combinations
-  if (permissions.includes('http://*/*') || permissions.includes('https://*/*')) {
-    issues.push({
-      type: 'warning',
-      message: 'Consider using host_permissions instead of broad http permissions'
-    });
-  }
-  
-  // MV2 vs MV3 specific checks
-  if (manifestVersion === 2) {
-    issues.push({
-      type: 'warning',
-      message: 'Manifest V2 is deprecated. Consider migrating to V3.',
-      fix: 'Update manifest_version to 3 and convert background scripts to service workers'
-    });
-    
-    if (manifest.background?.scripts) {
-      issues.push({
-        type: 'info',
-        message: 'Consider using background.service_worker for MV3',
-        fix: 'Replace background.scripts with background.service_worker'
-      });
-    }
-  }
-  
-  if (manifestVersion === 3) {
-    if (manifest.background?.scripts) {
-      issues.push({
-        type: 'error',
-        message: 'MV3 requires background.service_worker, not background.scripts'
-      });
-    }
-    
-    if (manifest.action) {
-      // Good - using MV3 action
-    } else if (manifest.browser_action) {
-      issues.push({
-        type: 'warning',
-        message: 'browser_action is deprecated, use action for MV3'
-      });
-    }
-  }
-  
-  // Check icons
-  if (!manifest.icons && manifestVersion === 3) {
-    issues.push({
-      type: 'info',
-      message: 'icons are recommended for store listing'
-    });
-  }
-  
-  // Validate browser-specific requirements
-  const browserSupport: Record<Browser, { supported: boolean; issues: ValidationIssue[] }> = {} as any;
-  
-  for (const browser of browsers) {
-    const req = BROWSER_REQUIREMENTS[browser];
-    const browserIssues: ValidationIssue[] = [];
-    
-    if (manifestVersion < req.minManifestVersion) {
-      browserIssues.push({
-        type: 'error',
-        message: \`\${browser} requires manifest_version \${req.minManifestVersion}+\`,
-        browser
-      });
-    }
-    
-    for (const field of req.requiredFields) {
-      if (!manifest[field]) {
-        browserIssues.push({
-          type: 'error',
-          message: \`\${browser} requires '\${field}' field\`,
-          field,
-          browser
-        });
-      }
-    }
-    
-    for (const perm of req.forbiddenPermissions) {
-      if (permissions.includes(perm)) {
-        browserIssues.push({
-          type: 'error',
-          message: \`\${browser} does not support '\${perm}' permission\`,
-          field: 'permissions',
-          browser
-        });
-      }
-    }
-    
-    for (const warning of req.warnings) {
-      browserIssues.push({
-        type: 'info',
-        message: warning,
-        browser
-      });
-    }
-    
-    browserSupport[browser] = {
-      supported: !browserIssues.some(i => i.type === 'error'),
-      issues: browserIssues
+function parsePermission(perm: string, required: boolean): Permission | null {
+  const dbEntry = PERMISSIONS_DB[perm];
+  if (dbEntry) {
+    return {
+      name: perm,
+      risk: dbEntry.risk as Permission['risk'],
+      reason: dbEntry.reason,
+      cwsWarning: dbEntry.cwsWarning,
+      required
     };
-    
-    issues.push(...browserIssues);
+  }
+  return null;
+}
+
+function parseHostPermission(host: string): HostPermission {
+  let risk: HostPermission['risk'] = 'low';
+  let reason = 'Specific host access';
+  
+  if (host === '<all_urls>' || host === '*://*/*' || host === 'http://*/*' || host === 'https://*/*') {
+    risk = 'high';
+    reason = 'Access to all websites';
+  } else if (host.includes('*')) {
+    risk = 'medium';
+    reason = 'Wildcard host pattern';
+  }
+  
+  return { pattern: host, risk, reason };
+}
+
+export function analyzePermissions(manifestPath: string): AuditReport {
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  
+  const permissions: Permission[] = [];
+  const hostPermissions: HostPermission[] = [];
+  
+  // Parse permissions
+  if (manifest.permissions) {
+    for (const perm of manifest.permissions) {
+      const parsed = parsePermission(perm, true);
+      if (parsed) permissions.push(parsed);
+    }
+  }
+  
+  // Parse optional permissions
+  if (manifest.optional_permissions) {
+    for (const perm of manifest.optional_permissions) {
+      const parsed = parsePermission(perm, false);
+      if (parsed) permissions.push(parsed);
+    }
+  }
+  
+  // Parse host permissions
+  const allHosts = [...(manifest.permissions || []), ...(manifest.host_permissions || [])]
+    .filter(p => typeof p === 'string' && (p.includes('://') || p.includes('<all_urls>')));
+  
+  for (const host of allHosts) {
+    hostPermissions.push(parseHostPermission(host));
+  }
+  
+  // Calculate risk
+  const allPerms = [...permissions.map(p => p.risk), ...hostPermissions.map(h => h.risk)];
+  const hasCritical = allPerms.includes('critical');
+  const hasHigh = allPerms.includes('high');
+  
+  let overallRisk: AuditReport['overallRisk'] = 'low';
+  if (hasCritical) overallRisk = 'critical';
+  else if (hasHigh) overallRisk = 'high';
+  else if (allPerms.includes('medium')) overallRisk = 'medium';
+  
+  // CWS rejection risk
+  const riskyPerms = permissions.filter(p => p.cwsWarning !== null);
+  const cwsRejectionRisk = hasCritical || riskyPerms.length > 3;
+  
+  // Recommendations
+  const recommendations: string[] = [];
+  if (hostPermissions.some(h => h.risk === 'high')) {
+    recommendations.push('Consider using activeTab instead of <all_urls> for user-initiated access');
+  }
+  if (permissions.some(p => p.name === 'webRequest' || p.name === 'webRequestBlocking')) {
+    recommendations.push('Use declarativeNetRequest for blocking ads/trackers - less review friction');
+  }
+  if (permissions.some(p => p.name === 'clipboardRead')) {
+    recommendations.push('clipboardRead almost always causes CWS rejection - remove if possible');
+  }
+  if (permissions.length > 10) {
+    recommendations.push('Consider splitting into multiple extensions if permissions are unrelated');
   }
   
   return {
-    valid: !issues.some(i => i.type === 'error'),
-    issues,
-    manifestVersion,
-    browserSupport
+    permissions,
+    hostPermissions,
+    overallRisk,
+    totalPermissions: permissions.length + hostPermissions.length,
+    riskyPermissions: riskyPerms.length,
+    cwsRejectionRisk,
+    recommendations
   };
 }
 
-export function validateManifestPath(manifestPath: string, browsers?: Browser[]): ValidationResult {
-  const content = fs.readFileSync(manifestPath, 'utf-8');
-  const manifest = JSON.parse(content);
-  return validateManifest(manifest, browsers);
+export function formatReport(report: AuditReport): string {
+  const riskEmoji = { low: '🟢', medium: '🟡', high: '🟠', critical: '🔴' };
+  
+  let output = \`\${riskEmoji[report.overallRisk]} PERMISSION AUDIT - Risk: \${report.overallRisk.toUpperCase()}
+
+📊 SUMMARY
+─────────────────────────────────────────────────────────────────
+  Total Permissions: \${report.totalPermissions}
+  Risky Permissions:  \${report.riskyPermissions}
+  CWS Rejection Risk: \${report.cwsRejectionRisk ? '⚠️ HIGH' : '✅ LOW'}
+
+🔐 PERMISSIONS
+─────────────────────────────────────────────────────────────────\`;
+  
+  for (const p of report.permissions) {
+    output += \`\n  \${riskEmoji[p.risk]} \${p.name}\${!p.required ? ' (optional)' : ''}\`;
+    output += \`\n     → \${p.reason}\`;
+    if (p.cwsWarning) output += \`\n     ⚠️ \${p.cwsWarning}\`;
+  }
+  
+  if (report.hostPermissions.length > 0) {
+    output += \`\n\n🌐 HOST PERMISSIONS\n─────────────────────────────────────────────────────────────────\`;
+    for (const h of report.hostPermissions) {
+      output += \`\n  \${riskEmoji[h.risk]} \${h.pattern}\`;
+      output += \`\n     → \${h.reason}\`;
+    }
+  }
+  
+  if (report.recommendations.length > 0) {
+    output += \`\n\n💡 RECOMMENDATIONS\n─────────────────────────────────────────────────────────────────\`;
+    for (const r of report.recommendations) {
+      output += \`\n  • \${r}\`;
+    }
+  }
+  
+  return output;
 }
 `;
-
-fs.writeFileSync(path.join(PROJECT_ROOT, 'src/core.ts'), coreCode);
-console.log('✅ src/core.ts');
+fs.writeFileSync(path.join(projectRoot, 'src/core.ts'), coreTs);
 
 // src/cli.ts
-const cliCode = `#!/usr/bin/env node
-import { Command } from 'commander';
-import * as chalk from 'chalk';
-import { validateManifestPath, ValidationResult, Browser } from './core';
+const cliTs = `import { Command } from 'commander';
+import { analyzePermissions, formatReport } from './core';
 
 const program = new Command();
 
 program
-  .name('crx-manifest-validator')
-  .description('Validate manifest.json against browser store requirements')
+  .name('crx-permission-analyzer')
+  .description('Audit Chrome extension permissions with risk assessment')
   .version('1.0.0')
   .argument('<manifest>', 'Path to manifest.json')
-  .option('-b, --browsers <browsers>', 'Browsers to validate (comma-separated)', 'chrome,firefox,safari,edge')
-  .option('--json', 'Output as JSON')
-  .action(async (manifestPath: string, options: { browsers: string; json: boolean }) => {
+  .action((manifestPath: string) => {
     try {
-      const browsers = options.browsers.split(',') as Browser[];
-      const result = validateManifestPath(manifestPath, browsers);
-      
-      if (options.json) {
-        console.log(JSON.stringify(result, null, 2));
-        return;
-      }
-      
-      // Print results
-      console.log(chalk.bold('\\n🔍 Manifest Validation Results'));
-      console.log('='.repeat(50));
-      console.log(\`Manifest Version: \${result.manifestVersion}\`);
-      console.log(chalk[result.valid ? 'green' : 'red'](
-        \`Status: \${result.valid ? 'VALID' : 'INVALID'}\`
-      ));
-      console.log();
-      
-      // Print issues
-      const errors = result.issues.filter(i => i.type === 'error');
-      const warnings = result.issues.filter(i => i.type === 'warning');
-      const infos = result.issues.filter(i => i.type === 'info');
-      
-      if (errors.length > 0) {
-        console.log(chalk.bold.red(\`❌ Errors (\${errors.length}):\`));
-        errors.forEach(e => console.log(\`  - \${e.message}\`));
-        console.log();
-      }
-      
-      if (warnings.length > 0) {
-        console.log(chalk.bold.yellow(\`⚠️  Warnings (\${warnings.length}):\`));
-        warnings.forEach(w => console.log(\`  - \${w.message}\`));
-        console.log();
-      }
-      
-      if (infos.length > 0) {
-        console.log(chalk.bold.blue(\`ℹ️  Info (\${infos.length}):\`));
-        infos.forEach(i => console.log(\`  - \${i.message}\`));
-        console.log();
-      }
-      
-      // Browser compatibility
-      console.log(chalk.bold('🌐 Browser Support:'));
-      for (const [browser, support] of Object.entries(result.browserSupport)) {
-        const icon = support.supported ? chalk.green('✓') : chalk.red('✗');
-        console.log(\`  \${icon} \${browser}: \${support.supported ? 'Supported' : 'Issues found'}\`);
-        if (support.issues.length > 0 && !support.supported) {
-          support.issues.forEach(i => console.log(\`      - \${i.message}\`));
-        }
-      }
-      
-      process.exit(result.valid ? 0 : 1);
-      
+      const report = analyzePermissions(manifestPath);
+      console.log(formatReport(report));
     } catch (error) {
-      console.error(chalk.red('Error:'), (error as Error).message);
+      console.error('Error analyzing permissions:', error);
       process.exit(1);
     }
   });
 
 program.parse();
 `;
-
-fs.writeFileSync(path.join(PROJECT_ROOT, 'src/cli.ts'), cliCode);
-console.log('✅ src/cli.ts');
+fs.writeFileSync(path.join(projectRoot, 'src/cli.ts'), cliTs);
 
 // src/index.ts
-fs.writeFileSync(path.join(PROJECT_ROOT, 'src/index.ts'), `export { validateManifest, validateManifestPath, ValidationResult, ValidationIssue, Browser } from './core';\n`);
-console.log('✅ src/index.ts');
+fs.writeFileSync(path.join(projectRoot, 'src/index.ts'), `export { analyzePermissions, formatReport, AuditReport, Permission, HostPermission } from './core';`);
 
-// Test fixture
-const testManifest = {
-  manifest_version: 3,
-  name: 'My Extension',
-  version: '1.0.0',
-  description: 'A great extension',
-  permissions: ['tabs', 'storage', 'cookies'],
-  host_permissions: ['https://*/*'],
-  action: {
-    default_popup: 'popup.html'
-  },
-  background: {
-    service_worker: 'background.js'
-  }
-};
+// tsconfig.json
+fs.writeFileSync(path.join(projectRoot, 'tsconfig.json'), JSON.stringify({
+  compilerOptions: { target: "ES2020", module: "commonjs", outDir: "./dist", strict: true, esModuleInterop: true, skipLibCheck: true },
+  include: ["src/**/*"]
+}, null, 2));
 
-fs.writeFileSync(path.join(PROJECT_ROOT, 'tests/fixtures/manifest.json'), JSON.stringify(testManifest, null, 2));
-console.log('✅ tests/fixtures/manifest.json');
+// README.md
+const readme = `# @zovo/crx-permission-analyzer
 
-// README
-const readme = `# crx-manifest-validator
-
-Validate manifest.json against Chrome Web Store, Firefox, Safari, and Edge requirements.
+Audit Chrome extension permissions with risk levels and CWS review warnings.
 
 ## Installation
 
 \`\`\`bash
-npm install -g crx-manifest-validator
-# or
-npx crx-manifest-validator ./manifest.json
-\`\`\`
-
-## Usage
-
-\`\`\`bash
-crx-manifest-validator ./manifest.json
-crx-manifest-validator ./manifest.json --browsers chrome,firefox
-crx-manifest-validator ./manifest.json --json
+npx crx-permission-analyzer ./manifest.json
 \`\`\`
 
 ## Features
 
-- ✅ Validates against Chrome, Firefox, Safari, Edge requirements
-- ✅ Checks permissions and security risks
-- ✅ MV2 vs MV3 migration warnings
-- ✅ Browser-specific compatibility checks
-- ✅ Fix suggestions for common issues
+- Risk level assessment (low/medium/high/critical)
+- CWS review warning detection
+- Host permission analysis
+- Recommendations for CWS approval
 
-## Example Output
+## Example
 
 \`\`\`
-🔍 Manifest Validation Results
-==================================================
-Manifest Version: 3
-Status: VALID
+🔴 PERMISSION AUDIT - Risk: HIGH
 
-❌ Errors (1):
-  - Consider using host_permissions instead of broad http permissions
+📊 SUMMARY
+─────────────────────────────────────────────────────────────────
+  Total Permissions: 8
+  Risky Permissions:  2
+  CWS Rejection Risk: ⚠️ HIGH
 
-⚠️  Warnings (2):
-  - Permission 'cookies': Can read/modify cookies
-  - Manifest V2 is deprecated. Consider migrating to V3.
-
-ℹ️  Info (2):
-  - icons are recommended for store listing
-  - Firefox still supports MV2 with some restrictions
-
-🌐 Browser Support:
-  ✓ chrome: Supported
-  ✓ firefox: Supported
-  ✓ safari: Supported
-  ✓ edge: Supported
+🔐 PERMISSIONS
+─────────────────────────────────────────────────────────────────
+  🟠 webRequest → Intercept network requests
+     ⚠️ Strict review required
+  🟡 cookies → Read/write cookies across sites
+     → Requires justification
 \`\`\`
-
-## License
-
-MIT
 `;
+fs.writeFileSync(path.join(projectRoot, 'README.md'), readme);
 
-fs.writeFileSync(path.join(PROJECT_ROOT, 'README.md'), readme);
-console.log('✅ README.md');
-
-// CI workflow
-const workflow = {
-  name: 'CI',
-  on: { push: { branches: ['main'] }, pull_request: {} },
-  jobs: {
-    build: {
-      'runs-on': 'ubuntu-latest',
-      steps: [
-        { uses: 'actions/checkout@v4' },
-        { uses: 'actions/setup-node@v4', with: { 'node-version': 20 } },
-        { run: 'npm ci && npm run build' },
-        { run: 'npm test || true' }
-      ]
-    },
-    publish: {
-      'needs': 'build',
-      'runs-on': 'ubuntu-latest',
-      if: "github.ref == 'refs/heads/main'",
-      steps: [
-        { uses: 'actions/checkout@v4' },
-        { uses: 'actions/setup-node@v4', with: { 'node-version': 20, 'registry-url': 'https://registry.npmjs.org' } },
-        { run: 'npm publish --access public', env: { NODE_AUTH_TOKEN: '${{ secrets.NPM_TOKEN }}' } }
-      ]
-    }
-  }
+// Test fixture - ensure directory exists first
+const testFixtureDir = path.join(projectRoot, 'tests/fixtures/test-extension');
+if (!fs.existsSync(testFixtureDir)) fs.mkdirSync(testFixtureDir, { recursive: true });
+const testManifest = {
+  manifest_version: 3,
+  name: "Test Extension",
+  version: "1.0.0",
+  permissions: ["tabs", "cookies", "storage", "webRequest", "clipboardRead"],
+  host_permissions: ["<all_urls>"]
 };
+fs.writeFileSync(path.join(testFixtureDir, 'manifest.json'), JSON.stringify(testManifest, null, 2));
 
-fs.writeFileSync(path.join(PROJECT_ROOT, '.github/workflows/ci.yml'), JSON.stringify(workflow, null, 2));
-console.log('✅ .github/workflows/ci.yml');
-
-console.log('\n📦 crx-manifest-validator created successfully!');
-console.log('\n✅ AGENT 2 COMPLETE');
+console.log('✅ crx-permission-analyzer built successfully');

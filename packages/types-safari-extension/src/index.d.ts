@@ -1,7 +1,7 @@
 /**
  * @zovo/types-safari-extension
  * Comprehensive TypeScript definitions for Safari App Extensions
- * Version: undefined
+ * Version: 1.0.0
  */
 
 /// <reference path="./namespaces/alarms.d.ts" />

@@ -1,7 +1,7 @@
 /**
  * @zovo/types-chrome-extension
  * Comprehensive TypeScript definitions for Chrome Extensions
- * Version: undefined
+ * Version: 1.0.0
  */
 
 /// <reference path="./namespaces/alarms.d.ts" />

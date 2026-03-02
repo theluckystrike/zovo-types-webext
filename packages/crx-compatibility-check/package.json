@@ -1,0 +1,26 @@
+{
+  "name": "@zovo/crx-compatibility-check",
+  "version": "1.0.0",
+  "description": "Check Chrome extension cross-browser compatibility",
+  "bin": {
+    "crx-compatibility-check": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "compatibility",
+    "cross-browser",
+    "firefox",
+    "safari"
+  ],
+  "license": "MIT"
+}

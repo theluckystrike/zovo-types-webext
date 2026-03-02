@@ -1,7 +1,7 @@
 /**
  * @zovo/types-firefox-extension
  * Comprehensive TypeScript definitions for Firefox WebExtensions
- * Version: undefined
+ * Version: 1.0.0
  */
 
 /// <reference path="./namespaces/alarms.d.ts" />

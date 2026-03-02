@@ -6,9 +6,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const API_CACHE_DIR = path.join(__dirname, '../api-cache');
+const PROJECT_ROOT = path.join(__dirname, '..');
+const API_CACHE_DIR = path.join(PROJECT_ROOT, 'api-cache');
 const NORMALIZED_DIR = path.join(API_CACHE_DIR, 'normalized');
-const PACKAGES_DIR = path.join(__dirname, '../packages');
+const PACKAGES_DIR = path.join(PROJECT_ROOT, 'packages');
+const PACKAGE_JSON = require(path.join(PROJECT_ROOT, 'package.json'));
 
 // Ensure packages directories exist
 const packages = [
@@ -130,7 +132,7 @@ function generateChromeTypes(normalized) {
   });
 
   // Generate index file
-  let indexContent = `/**\n * @zovo/types-chrome-extension\n * Comprehensive TypeScript definitions for Chrome Extensions\n * Version: ${require('../../package.json').version}\n */\n\n`;
+  let indexContent = `/**\n * @zovo/types-chrome-extension\n * Comprehensive TypeScript definitions for Chrome Extensions\n * Version: ${PACKAGE_JSON.version}\n */\n\n`;
   
   normalized.chrome.forEach(api => {
     const ns = api.namespace;
@@ -174,7 +176,7 @@ function generateFirefoxTypes(normalized) {
   });
 
   // Generate index file
-  let indexContent = `/**\n * @zovo/types-firefox-extension\n * Comprehensive TypeScript definitions for Firefox WebExtensions\n * Version: ${require('../../package.json').version}\n */\n\n`;
+  let indexContent = `/**\n * @zovo/types-firefox-extension\n * Comprehensive TypeScript definitions for Firefox WebExtensions\n * Version: ${PACKAGE_JSON.version}\n */\n\n`;
   
   normalized.firefox.forEach(api => {
     const ns = api.namespace.replace(/^browser\./, '');
@@ -218,7 +220,7 @@ function generateSafariTypes(normalized) {
   });
 
   // Generate index file
-  let indexContent = `/**\n * @zovo/types-safari-extension\n * Comprehensive TypeScript definitions for Safari App Extensions\n * Version: ${require('../../package.json').version}\n */\n\n`;
+  let indexContent = `/**\n * @zovo/types-safari-extension\n * Comprehensive TypeScript definitions for Safari App Extensions\n * Version: ${PACKAGE_JSON.version}\n */\n\n`;
   
   normalized.safari.forEach(api => {
     const ns = api.namespace.replace(/^chrome\./, '');
@@ -262,7 +264,7 @@ function generateEdgeTypes(normalized) {
   });
 
   // Generate index file
-  let indexContent = `/**\n * @zovo/types-edge-extension\n * Comprehensive TypeScript definitions for Microsoft Edge Extensions\n * Version: ${require('../../package.json').version}\n */\n\n`;
+  let indexContent = `/**\n * @zovo/types-edge-extension\n * Comprehensive TypeScript definitions for Microsoft Edge Extensions\n * Version: ${PACKAGE_JSON.version}\n */\n\n`;
   
   normalized.edge.forEach(api => {
     const ns = api.namespace.replace(/\./g, '_');
@@ -306,7 +308,7 @@ function generateCommonTypes(normalized) {
   });
 
   // Generate index file
-  let indexContent = `/**\n * @zovo/types-webext-common\n * Cross-browser compatible TypeScript definitions for WebExtensions\n * Contains only APIs available in all supported browsers\n * Version: ${require('../../package.json').version}\n */\n\n`;
+  let indexContent = `/**\n * @zovo/types-webext-common\n * Cross-browser compatible TypeScript definitions for WebExtensions\n * Contains only APIs available in all supported browsers\n * Version: ${PACKAGE_JSON.version}\n */\n\n`;
   
   normalized.common.forEach(api => {
     const ns = api.namespace.replace(/^(chrome|browser)\./, '');
@@ -391,7 +393,7 @@ function generateFullTypes(normalized) {
   });
 
   // Generate index file
-  let indexContent = `/**\n * @zovo/types-webext-full\n * Complete WebExtension TypeScript definitions with browser discriminators\n * Version: ${require('../../package.json').version}\n */\n\n`;
+  let indexContent = `/**\n * @zovo/types-webext-full\n * Complete WebExtension TypeScript definitions with browser discriminators\n * Version: ${PACKAGE_JSON.version}\n */\n\n`;
   
   indexContent += `export type BrowserType = 'chrome' | 'firefox' | 'safari' | 'edge';\n\n`;
   
