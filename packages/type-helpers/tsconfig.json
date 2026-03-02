@@ -6,7 +6,6 @@
       "ES2020",
       "DOM"
     ],
-    "types": ["chrome"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -23,10 +22,9 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*"
+    "*.d.ts"
   ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
+    "node_modules"
   ]
 }
