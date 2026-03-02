@@ -6,7 +6,6 @@
       "ES2020",
       "DOM"
     ],
-    "types": ["chrome"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -19,8 +18,7 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src/**/*"

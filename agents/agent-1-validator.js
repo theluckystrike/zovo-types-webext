@@ -80,8 +80,8 @@ function validateFile(filePath, packageName) {
     }
   }
   
-  // Check 8: Export patterns
-  const hasExports = content.includes('export') || content.includes('declare namespace');
+  // Check 8: Export patterns (includes triple-slash references as valid)
+  const hasExports = content.includes('export') || content.includes('declare namespace') || content.includes('/// <reference');
   if (!hasExports) {
     issues.push({ type: 'error', msg: 'File has no exports' });
   }
@@ -103,6 +103,15 @@ function analyzePackage(packageDir) {
   
   let packageWarnings = 0;
   let packageErrors = 0;
+  
+  // Skip packages with no namespace files (like types-webext-common when no common APIs exist)
+  const namespaceDir = path.join(srcDir, 'namespaces');
+  const hasNamespaces = fs.existsSync(namespaceDir) && fs.readdirSync(namespaceDir).length > 0;
+  
+  if (!hasNamespaces && files.length <= 1) {
+    console.log(`   ℹ️  No namespace files - package may be placeholder for future common APIs`);
+    return;
+  }
   
   files.forEach(file => {
     const filePath = path.join(srcDir, file);

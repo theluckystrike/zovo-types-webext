@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T09:52:46.189Z",
+  "timestamp": "2026-03-02T10:03:02.101Z",
   "rules": {
     "requiredHeaders": true,
     "strictTyping": true,
@@ -12,39 +12,13 @@
   "results": {
     "passed": [],
     "warnings": [],
-    "errors": [
-      {
-        "package": "types-chrome-extension",
-        "file": "index.d.ts",
-        "msg": "File has no exports"
-      },
-      {
-        "package": "types-edge-extension",
-        "file": "index.d.ts",
-        "msg": "File has no exports"
-      },
-      {
-        "package": "types-firefox-extension",
-        "file": "index.d.ts",
-        "msg": "File has no exports"
-      },
-      {
-        "package": "types-safari-extension",
-        "file": "index.d.ts",
-        "msg": "File has no exports"
-      },
-      {
-        "package": "types-webext-common",
-        "file": "index.d.ts",
-        "msg": "File has no exports"
-      }
-    ],
+    "errors": [],
     "fixes": []
   },
   "summary": {
     "totalPackages": 7,
     "totalWarnings": 0,
-    "totalErrors": 5,
+    "totalErrors": 0,
     "fixable": 0
   }
 }
