@@ -1,0 +1,36 @@
+{
+  "browser": "chrome",
+  "fromVersion": "120",
+  "toVersion": "121",
+  "generated": "2026-03-02T09:48:27.061Z",
+  "summary": {
+    "added": {
+      "namespaces": [
+        "sidePanel"
+      ],
+      "apis": [],
+      "methods": [
+        "tabs.goBack()",
+        "tabs.goForward()",
+        "runtime.getContexts()",
+        "scripting.registerContentScript()",
+        "sidePanel.setOptions()",
+        "sidePanel.getOptions()"
+      ],
+      "events": [
+        "tabs.onTabCaptured",
+        "runtime.onStartup",
+        "scripting.onScriptInjection",
+        "sidePanel.onOpen",
+        "sidePanel.onClose"
+      ]
+    },
+    "removed": {
+      "namespaces": [],
+      "apis": [],
+      "methods": [],
+      "events": []
+    },
+    "changed": []
+  }
+}

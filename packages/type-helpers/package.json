@@ -1,19 +1,22 @@
 {
   "name": "@zovo/type-helpers",
   "version": "1.0.0",
-  "description": "Advanced TypeScript utilities for browser extensions",
+  "description": "TypeScript definitions for types",
   "main": "index.d.ts",
   "types": "index.d.ts",
-  "scripts": {
-    "test": "echo \"No tests yet\""
-  },
+  "files": [
+    "index.d.ts",
+    "src/"
+  ],
   "keywords": [
     "typescript",
     "types",
-    "browser-extension",
-    "chrome",
-    "firefox"
+    "utilities"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public"

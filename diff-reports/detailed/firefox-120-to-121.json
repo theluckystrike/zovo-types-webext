@@ -1,0 +1,39 @@
+{
+  "browser": "firefox",
+  "fromVersion": "120",
+  "toVersion": "121",
+  "generated": "2026-03-02T09:48:27.062Z",
+  "summary": {
+    "added": {
+      "namespaces": [
+        "theme",
+        "sidebar"
+      ],
+      "apis": [],
+      "methods": [
+        "tabs.discard()",
+        "runtime.getBrowserInfo()",
+        "bookmarks.search()",
+        "theme.getCurrent()",
+        "theme.update()",
+        "theme.reset()",
+        "sidebar.open()",
+        "sidebar.close()",
+        "sidebar.isOpen()"
+      ],
+      "events": [
+        "tabs.onDiscarded",
+        "bookmarks.onChanged",
+        "theme.onUpdated",
+        "sidebar.onVisibilityChange"
+      ]
+    },
+    "removed": {
+      "namespaces": [],
+      "apis": [],
+      "methods": [],
+      "events": []
+    },
+    "changed": []
+  }
+}

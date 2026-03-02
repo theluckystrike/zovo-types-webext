@@ -1,0 +1,55 @@
+{
+  "name": "zovo-webext-types",
+  "displayName": "@zovo WebExt Types",
+  "description": "Enhanced IntelliSense for browser extension development",
+  "version": "1.0.0",
+  "publisher": "zovo",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "IntelliSense"
+  ],
+  "keywords": [
+    "chrome-extension",
+    "firefox-webextension",
+    "intellisense"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "@zovo WebExt Types",
+      "properties": {
+        "zovoWebext.autocomplete": {
+          "type": "boolean",
+          "default": true
+        },
+        "zovoWebext.preferredBrowser": {
+          "type": "string",
+          "default": "chrome",
+          "enum": [
+            "chrome",
+            "firefox",
+            "safari",
+            "edge"
+          ]
+        }
+      }
+    },
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/chrome.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/chrome.json"
+      }
+    ]
+  }
+}

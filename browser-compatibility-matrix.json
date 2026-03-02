@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "browsers": {
+    "chrome": {
+      "latest": "122",
+      "supported": [
+        "120",
+        "121",
+        "122"
+      ]
+    },
+    "firefox": {
+      "latest": "121",
+      "supported": [
+        "120",
+        "121"
+      ]
+    },
+    "safari": {
+      "latest": "17",
+      "supported": [
+        "16",
+        "17"
+      ]
+    },
+    "edge": {
+      "latest": "122",
+      "supported": [
+        "120",
+        "121",
+        "122"
+      ]
+    }
+  },
+  "commonAPIs": [
+    "tabs.query",
+    "tabs.create",
+    "tabs.update",
+    "tabs.remove",
+    "storage.get",
+    "storage.set",
+    "storage.remove",
+    "runtime.sendMessage",
+    "runtime.onMessage",
+    "runtime.getManifest",
+    "bookmarks.create",
+    "bookmarks.get",
+    "contextMenus.create"
+  ],
+  "browserSpecific": {
+    "chrome": [
+      "sidePanel",
+      "scripting.registerContentScript",
+      "declarativeNetRequest"
+    ],
+    "firefox": [
+      "theme",
+      "sidebar",
+      "menus"
+    ],
+    "safari": [
+      "extensionKit"
+    ],
+    "edge": [
+      "sidePanel",
+      "scripting"
+    ]
+  },
+  "deprecated": [
+    {
+      "api": "chrome.browserAction",
+      "deprecatedIn": "120",
+      "replacement": "chrome.action"
+    },
+    {
+      "api": "browserAction.onClicked",
+      "deprecatedIn": "120",
+      "replacement": "chrome.action.onClicked"
+    },
+    {
+      "api": "tabs.move",
+      "deprecatedIn": "121",
+      "replacement": "tabs.group"
+    }
+  ],
+  "generated": "2026-03-02T09:48:27.065Z"
+}

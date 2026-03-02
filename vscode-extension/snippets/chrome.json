@@ -1,0 +1,34 @@
+{
+  "chrome.tabs.query": {
+    "prefix": "tabs-query",
+    "body": [
+      "chrome.tabs.query({",
+      "  active: true,",
+      "  currentWindow: true",
+      "}, (tabs) => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Query tabs"
+  },
+  "chrome.storage.set": {
+    "prefix": "storage-set",
+    "body": [
+      "chrome.storage.local.set({",
+      "  $1: $2",
+      "});"
+    ],
+    "description": "Set storage"
+  },
+  "manifest-v3": {
+    "prefix": "manifest-v3",
+    "body": [
+      "{",
+      "  \"manifest_version\": 3,",
+      "  \"name\": \"$1\",",
+      "  \"version\": \"1.0\"",
+      "}"
+    ],
+    "description": "MV3 manifest"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "browser": "chrome",
+  "fromVersion": "121",
+  "toVersion": "122",
+  "generated": "2026-03-02T09:48:27.062Z",
+  "summary": {
+    "added": {
+      "namespaces": [
+        "declarativeNetRequest"
+      ],
+      "apis": [],
+      "methods": [
+        "tabs.setZoom()",
+        "tabs.getZoom()",
+        "storage.getBytesInUse()",
+        "runtime.openOptionsPage()",
+        "scripting.unregisterContentScript()",
+        "sidePanel.setPanelBehavior()",
+        "declarativeNetRequest.updateSessionRules()",
+        "declarativeNetRequest.getSessionRules()",
+        "declarativeNetRequest.isRegexSupported()"
+      ],
+      "events": [
+        "tabs.onZoomChange",
+        "runtime.onUpdateAvailable",
+        "declarativeNetRequest.onRuleMatchedDebug"
+      ]
+    },
+    "removed": {
+      "namespaces": [],
+      "apis": [],
+      "methods": [],
+      "events": []
+    },
+    "changed": []
+  }
+}

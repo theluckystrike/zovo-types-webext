@@ -1,8 +1,22 @@
 {
   "name": "@zovo/types-edge-extension",
-  "version": "1.0.0",
-  "description": "TypeScript definitions for Microsoft Edge Extensions",
-  "types": "src/index.d.ts",
+  "version": "2.1.0",
+  "description": "TypeScript definitions for edge extension",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "src/"
+  ],
+  "keywords": [
+    "typescript",
+    "edge-extension"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   }
