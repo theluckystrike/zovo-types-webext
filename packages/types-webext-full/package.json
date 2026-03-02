@@ -1,0 +1,9 @@
+{
+  "name": "@zovo/types-webext-full",
+  "version": "1.0.0",
+  "description": "Full WebExtension types with browser discriminators",
+  "types": "src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}

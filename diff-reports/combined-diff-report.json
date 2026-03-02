@@ -1,0 +1,1102 @@
+{
+  "chrome": {
+    "browser": "chrome",
+    "fromVersion": "0.0.0",
+    "toVersion": "120",
+    "generated": "2026-03-02T09:11:13.808Z",
+    "added": [
+      {
+        "namespace": "alarms",
+        "type": "namespace",
+        "description": "Chrome API: alarms"
+      },
+      {
+        "namespace": "bookmarks",
+        "type": "namespace",
+        "description": "Chrome API: bookmarks"
+      },
+      {
+        "namespace": "browserAction",
+        "type": "namespace",
+        "description": "Chrome API: browserAction"
+      },
+      {
+        "namespace": "browsingData",
+        "type": "namespace",
+        "description": "Chrome API: browsingData"
+      },
+      {
+        "namespace": "clipboard",
+        "type": "namespace",
+        "description": "Chrome API: clipboard"
+      },
+      {
+        "namespace": "contentSettings",
+        "type": "namespace",
+        "description": "Chrome API: contentSettings"
+      },
+      {
+        "namespace": "contextMenus",
+        "type": "namespace",
+        "description": "Chrome API: contextMenus"
+      },
+      {
+        "namespace": "cookies",
+        "type": "namespace",
+        "description": "Chrome API: cookies"
+      },
+      {
+        "namespace": "debugger",
+        "type": "namespace",
+        "description": "Chrome API: debugger"
+      },
+      {
+        "namespace": "declarativeContent",
+        "type": "namespace",
+        "description": "Chrome API: declarativeContent"
+      },
+      {
+        "namespace": "declarativeNetRequest",
+        "type": "namespace",
+        "description": "Chrome API: declarativeNetRequest"
+      },
+      {
+        "namespace": "desktopCapture",
+        "type": "namespace",
+        "description": "Chrome API: desktopCapture"
+      },
+      {
+        "namespace": "devtools",
+        "type": "namespace",
+        "description": "Chrome API: devtools"
+      },
+      {
+        "namespace": "downloads",
+        "type": "namespace",
+        "description": "Chrome API: downloads"
+      },
+      {
+        "namespace": "enterprise.deviceAttributes",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.deviceAttributes"
+      },
+      {
+        "namespace": "enterprise.hardwarePlatform",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.hardwarePlatform"
+      },
+      {
+        "namespace": "enterprise.networkingAttributes",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.networkingAttributes"
+      },
+      {
+        "namespace": "enterprise.platformKeys",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.platformKeys"
+      },
+      {
+        "namespace": "extension",
+        "type": "namespace",
+        "description": "Chrome API: extension"
+      },
+      {
+        "namespace": "fontSettings",
+        "type": "namespace",
+        "description": "Chrome API: fontSettings"
+      },
+      {
+        "namespace": "gcm",
+        "type": "namespace",
+        "description": "Chrome API: gcm"
+      },
+      {
+        "namespace": "history",
+        "type": "namespace",
+        "description": "Chrome API: history"
+      },
+      {
+        "namespace": "i18n",
+        "type": "namespace",
+        "description": "Chrome API: i18n"
+      },
+      {
+        "namespace": "identity",
+        "type": "namespace",
+        "description": "Chrome API: identity"
+      },
+      {
+        "namespace": "idle",
+        "type": "namespace",
+        "description": "Chrome API: idle"
+      },
+      {
+        "namespace": "input.ime",
+        "type": "namespace",
+        "description": "Chrome API: input.ime"
+      },
+      {
+        "namespace": "loginState",
+        "type": "namespace",
+        "description": "Chrome API: loginState"
+      },
+      {
+        "namespace": "management",
+        "type": "namespace",
+        "description": "Chrome API: management"
+      },
+      {
+        "namespace": "notifications",
+        "type": "namespace",
+        "description": "Chrome API: notifications"
+      },
+      {
+        "namespace": "offscreen",
+        "type": "namespace",
+        "description": "Chrome API: offscreen"
+      },
+      {
+        "namespace": "pageCapture",
+        "type": "namespace",
+        "description": "Chrome API: pageCapture"
+      },
+      {
+        "namespace": "platformKeys",
+        "type": "namespace",
+        "description": "Chrome API: platformKeys"
+      },
+      {
+        "namespace": "power",
+        "type": "namespace",
+        "description": "Chrome API: power"
+      },
+      {
+        "namespace": "printerProvider",
+        "type": "namespace",
+        "description": "Chrome API: printerProvider"
+      },
+      {
+        "namespace": "printing",
+        "type": "namespace",
+        "description": "Chrome API: printing"
+      },
+      {
+        "namespace": "printingMetrics",
+        "type": "namespace",
+        "description": "Chrome API: printingMetrics"
+      },
+      {
+        "namespace": "privacy",
+        "type": "namespace",
+        "description": "Chrome API: privacy"
+      },
+      {
+        "namespace": "proxy",
+        "type": "namespace",
+        "description": "Chrome API: proxy"
+      },
+      {
+        "namespace": "scripting",
+        "type": "namespace",
+        "description": "Chrome API: scripting"
+      },
+      {
+        "namespace": "search",
+        "type": "namespace",
+        "description": "Chrome API: search"
+      },
+      {
+        "namespace": "sessions",
+        "type": "namespace",
+        "description": "Chrome API: sessions"
+      },
+      {
+        "namespace": "sidePanel",
+        "type": "namespace",
+        "description": "Chrome API: sidePanel"
+      },
+      {
+        "namespace": "storage",
+        "type": "namespace",
+        "description": "Chrome API: storage"
+      },
+      {
+        "namespace": "system.cpu",
+        "type": "namespace",
+        "description": "Chrome API: system.cpu"
+      },
+      {
+        "namespace": "system.memory",
+        "type": "namespace",
+        "description": "Chrome API: system.memory"
+      },
+      {
+        "namespace": "system.storage",
+        "type": "namespace",
+        "description": "Chrome API: system.storage"
+      },
+      {
+        "namespace": "tabCapture",
+        "type": "namespace",
+        "description": "Chrome API: tabCapture"
+      },
+      {
+        "namespace": "tabGroups",
+        "type": "namespace",
+        "description": "Chrome API: tabGroups"
+      },
+      {
+        "namespace": "tabs",
+        "type": "namespace",
+        "description": "Chrome API: tabs"
+      },
+      {
+        "namespace": "topSites",
+        "type": "namespace",
+        "description": "Chrome API: topSites"
+      },
+      {
+        "namespace": "tts",
+        "type": "namespace",
+        "description": "Chrome API: tts"
+      },
+      {
+        "namespace": "ttsEngine",
+        "type": "namespace",
+        "description": "Chrome API: ttsEngine"
+      },
+      {
+        "namespace": "types",
+        "type": "namespace",
+        "description": "Chrome API: types"
+      },
+      {
+        "namespace": "unlimitedStorage",
+        "type": "namespace",
+        "description": "Chrome API: unlimitedStorage"
+      },
+      {
+        "namespace": "userScripts",
+        "type": "namespace",
+        "description": "Chrome API: userScripts"
+      },
+      {
+        "namespace": "vpnProvider",
+        "type": "namespace",
+        "description": "Chrome API: vpnProvider"
+      },
+      {
+        "namespace": "wallpaper",
+        "type": "namespace",
+        "description": "Chrome API: wallpaper"
+      },
+      {
+        "namespace": "webNavigation",
+        "type": "namespace",
+        "description": "Chrome API: webNavigation"
+      },
+      {
+        "namespace": "webRequest",
+        "type": "namespace",
+        "description": "Chrome API: webRequest"
+      },
+      {
+        "namespace": "windows",
+        "type": "namespace",
+        "description": "Chrome API: windows"
+      }
+    ],
+    "removed": [],
+    "modified": []
+  },
+  "firefox": {
+    "browser": "firefox",
+    "fromVersion": "0.0.0",
+    "toVersion": "121",
+    "generated": "2026-03-02T09:11:13.812Z",
+    "added": [
+      {
+        "namespace": "alarms",
+        "type": "namespace",
+        "description": "Firefox API: alarms"
+      },
+      {
+        "namespace": "bookmarks",
+        "type": "namespace",
+        "description": "Firefox API: bookmarks"
+      },
+      {
+        "namespace": "browserAction",
+        "type": "namespace",
+        "description": "Firefox API: browserAction"
+      },
+      {
+        "namespace": "browsingData",
+        "type": "namespace",
+        "description": "Firefox API: browsingData"
+      },
+      {
+        "namespace": "clipboardRead",
+        "type": "namespace",
+        "description": "Firefox API: clipboardRead"
+      },
+      {
+        "namespace": "clipboardWrite",
+        "type": "namespace",
+        "description": "Firefox API: clipboardWrite"
+      },
+      {
+        "namespace": "composite",
+        "type": "namespace",
+        "description": "Firefox API: composite"
+      },
+      {
+        "namespace": "contextMenus",
+        "type": "namespace",
+        "description": "Firefox API: contextMenus"
+      },
+      {
+        "namespace": "cookies",
+        "type": "namespace",
+        "description": "Firefox API: cookies"
+      },
+      {
+        "namespace": "devtools",
+        "type": "namespace",
+        "description": "Firefox API: devtools"
+      },
+      {
+        "namespace": "downloads",
+        "type": "namespace",
+        "description": "Firefox API: downloads"
+      },
+      {
+        "namespace": "experimental",
+        "type": "namespace",
+        "description": "Firefox API: experimental"
+      },
+      {
+        "namespace": "extension",
+        "type": "namespace",
+        "description": "Firefox API: extension"
+      },
+      {
+        "namespace": "extensionTypes",
+        "type": "namespace",
+        "description": "Firefox API: extensionTypes"
+      },
+      {
+        "namespace": "find",
+        "type": "namespace",
+        "description": "Firefox API: find"
+      },
+      {
+        "namespace": "gecko",
+        "type": "namespace",
+        "description": "Firefox API: gecko"
+      },
+      {
+        "namespace": "history",
+        "type": "namespace",
+        "description": "Firefox API: history"
+      },
+      {
+        "namespace": "i18n",
+        "type": "namespace",
+        "description": "Firefox API: i18n"
+      },
+      {
+        "namespace": "identity",
+        "type": "namespace",
+        "description": "Firefox API: identity"
+      },
+      {
+        "namespace": "idle",
+        "type": "namespace",
+        "description": "Firefox API: idle"
+      },
+      {
+        "namespace": "management",
+        "type": "namespace",
+        "description": "Firefox API: management"
+      },
+      {
+        "namespace": "menus",
+        "type": "namespace",
+        "description": "Firefox API: menus"
+      },
+      {
+        "namespace": "nativeMessaging",
+        "type": "namespace",
+        "description": "Firefox API: nativeMessaging"
+      },
+      {
+        "namespace": "notifications",
+        "type": "namespace",
+        "description": "Firefox API: notifications"
+      },
+      {
+        "namespace": "omnibox",
+        "type": "namespace",
+        "description": "Firefox API: omnibox"
+      },
+      {
+        "namespace": "pageAction",
+        "type": "namespace",
+        "description": "Firefox API: pageAction"
+      },
+      {
+        "namespace": "pageCapture",
+        "type": "namespace",
+        "description": "Firefox API: pageCapture"
+      },
+      {
+        "namespace": "permissions",
+        "type": "namespace",
+        "description": "Firefox API: permissions"
+      },
+      {
+        "namespace": "pkcs11",
+        "type": "namespace",
+        "description": "Firefox API: pkcs11"
+      },
+      {
+        "namespace": "privacy",
+        "type": "namespace",
+        "description": "Firefox API: privacy"
+      },
+      {
+        "namespace": "proxy",
+        "type": "namespace",
+        "description": "Firefox API: proxy"
+      },
+      {
+        "namespace": "runtime",
+        "type": "namespace",
+        "description": "Firefox API: runtime"
+      },
+      {
+        "namespace": "scripting",
+        "type": "namespace",
+        "description": "Firefox API: scripting"
+      },
+      {
+        "namespace": "search",
+        "type": "namespace",
+        "description": "Firefox API: search"
+      },
+      {
+        "namespace": "sessions",
+        "type": "namespace",
+        "description": "Firefox API: sessions"
+      },
+      {
+        "namespace": "sidebarAction",
+        "type": "namespace",
+        "description": "Firefox API: sidebarAction"
+      },
+      {
+        "namespace": "storage",
+        "type": "namespace",
+        "description": "Firefox API: storage"
+      },
+      {
+        "namespace": "tabs",
+        "type": "namespace",
+        "description": "Firefox API: tabs"
+      },
+      {
+        "namespace": "theme",
+        "type": "namespace",
+        "description": "Firefox API: theme"
+      },
+      {
+        "namespace": "topSites",
+        "type": "namespace",
+        "description": "Firefox API: topSites"
+      },
+      {
+        "namespace": "tts",
+        "type": "namespace",
+        "description": "Firefox API: tts"
+      },
+      {
+        "namespace": "ttsEngine",
+        "type": "namespace",
+        "description": "Firefox API: ttsEngine"
+      },
+      {
+        "namespace": "types",
+        "type": "namespace",
+        "description": "Firefox API: types"
+      },
+      {
+        "namespace": "unlimitedStorage",
+        "type": "namespace",
+        "description": "Firefox API: unlimitedStorage"
+      },
+      {
+        "namespace": "urlbar",
+        "type": "namespace",
+        "description": "Firefox API: urlbar"
+      },
+      {
+        "namespace": "webNavigation",
+        "type": "namespace",
+        "description": "Firefox API: webNavigation"
+      },
+      {
+        "namespace": "webRequest",
+        "type": "namespace",
+        "description": "Firefox API: webRequest"
+      },
+      {
+        "namespace": "windows",
+        "type": "namespace",
+        "description": "Firefox API: windows"
+      },
+      {
+        "namespace": "browserSettings",
+        "type": "namespace",
+        "description": "Browser settings API"
+      },
+      {
+        "namespace": "userScripts",
+        "type": "namespace",
+        "description": "User Scripts API"
+      }
+    ],
+    "removed": [],
+    "modified": []
+  },
+  "safari": {
+    "browser": "safari",
+    "fromVersion": "0.0.0",
+    "toVersion": "17",
+    "generated": "2026-03-02T09:11:13.812Z",
+    "added": [
+      {
+        "namespace": "alarms",
+        "type": "namespace",
+        "description": "Safari API: alarms"
+      },
+      {
+        "namespace": "bookmarks",
+        "type": "namespace",
+        "description": "Safari API: bookmarks"
+      },
+      {
+        "namespace": "browserAction",
+        "type": "namespace",
+        "description": "Safari API: browserAction"
+      },
+      {
+        "namespace": "clipboard",
+        "type": "namespace",
+        "description": "Safari API: clipboard"
+      },
+      {
+        "namespace": "contextMenus",
+        "type": "namespace",
+        "description": "Safari API: contextMenus"
+      },
+      {
+        "namespace": "cookies",
+        "type": "namespace",
+        "description": "Safari API: cookies"
+      },
+      {
+        "namespace": "devtools",
+        "type": "namespace",
+        "description": "Safari API: devtools"
+      },
+      {
+        "namespace": "downloads",
+        "type": "namespace",
+        "description": "Safari API: downloads"
+      },
+      {
+        "namespace": "extension",
+        "type": "namespace",
+        "description": "Safari API: extension"
+      },
+      {
+        "namespace": "i18n",
+        "type": "namespace",
+        "description": "Safari API: i18n"
+      },
+      {
+        "namespace": "identity",
+        "type": "namespace",
+        "description": "Safari API: identity"
+      },
+      {
+        "namespace": "idle",
+        "type": "namespace",
+        "description": "Safari API: idle"
+      },
+      {
+        "namespace": "management",
+        "type": "namespace",
+        "description": "Safari API: management"
+      },
+      {
+        "namespace": "notifications",
+        "type": "namespace",
+        "description": "Safari API: notifications"
+      },
+      {
+        "namespace": "pageCapture",
+        "type": "namespace",
+        "description": "Safari API: pageCapture"
+      },
+      {
+        "namespace": "privacy",
+        "type": "namespace",
+        "description": "Safari API: privacy"
+      },
+      {
+        "namespace": "proxy",
+        "type": "namespace",
+        "description": "Safari API: proxy"
+      },
+      {
+        "namespace": "runtime",
+        "type": "namespace",
+        "description": "Safari API: runtime"
+      },
+      {
+        "namespace": "scripting",
+        "type": "namespace",
+        "description": "Safari API: scripting"
+      },
+      {
+        "namespace": "storage",
+        "type": "namespace",
+        "description": "Safari API: storage"
+      },
+      {
+        "namespace": "tabs",
+        "type": "namespace",
+        "description": "Safari API: tabs"
+      },
+      {
+        "namespace": "topSites",
+        "type": "namespace",
+        "description": "Safari API: topSites"
+      },
+      {
+        "namespace": "webNavigation",
+        "type": "namespace",
+        "description": "Safari API: webNavigation"
+      },
+      {
+        "namespace": "webRequest",
+        "type": "namespace",
+        "description": "Safari API: webRequest"
+      },
+      {
+        "namespace": "windows",
+        "type": "namespace",
+        "description": "Safari API: windows"
+      },
+      {
+        "namespace": "_manifest",
+        "type": "namespace",
+        "description": "Manifest v3 support"
+      }
+    ],
+    "removed": [],
+    "modified": []
+  },
+  "edge": {
+    "browser": "edge",
+    "fromVersion": "0.0.0",
+    "toVersion": "120",
+    "generated": "2026-03-02T09:11:13.813Z",
+    "added": [
+      {
+        "namespace": "alarms",
+        "type": "namespace",
+        "description": "Chrome API: alarms"
+      },
+      {
+        "namespace": "bookmarks",
+        "type": "namespace",
+        "description": "Chrome API: bookmarks"
+      },
+      {
+        "namespace": "browserAction",
+        "type": "namespace",
+        "description": "Chrome API: browserAction"
+      },
+      {
+        "namespace": "browsingData",
+        "type": "namespace",
+        "description": "Chrome API: browsingData"
+      },
+      {
+        "namespace": "clipboard",
+        "type": "namespace",
+        "description": "Chrome API: clipboard"
+      },
+      {
+        "namespace": "contentSettings",
+        "type": "namespace",
+        "description": "Chrome API: contentSettings"
+      },
+      {
+        "namespace": "contextMenus",
+        "type": "namespace",
+        "description": "Chrome API: contextMenus"
+      },
+      {
+        "namespace": "cookies",
+        "type": "namespace",
+        "description": "Chrome API: cookies"
+      },
+      {
+        "namespace": "debugger",
+        "type": "namespace",
+        "description": "Chrome API: debugger"
+      },
+      {
+        "namespace": "declarativeContent",
+        "type": "namespace",
+        "description": "Chrome API: declarativeContent"
+      },
+      {
+        "namespace": "declarativeNetRequest",
+        "type": "namespace",
+        "description": "Chrome API: declarativeNetRequest"
+      },
+      {
+        "namespace": "desktopCapture",
+        "type": "namespace",
+        "description": "Chrome API: desktopCapture"
+      },
+      {
+        "namespace": "devtools",
+        "type": "namespace",
+        "description": "Chrome API: devtools"
+      },
+      {
+        "namespace": "downloads",
+        "type": "namespace",
+        "description": "Chrome API: downloads"
+      },
+      {
+        "namespace": "enterprise.deviceAttributes",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.deviceAttributes"
+      },
+      {
+        "namespace": "enterprise.hardwarePlatform",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.hardwarePlatform"
+      },
+      {
+        "namespace": "enterprise.networkingAttributes",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.networkingAttributes"
+      },
+      {
+        "namespace": "enterprise.platformKeys",
+        "type": "namespace",
+        "description": "Chrome API: enterprise.platformKeys"
+      },
+      {
+        "namespace": "extension",
+        "type": "namespace",
+        "description": "Chrome API: extension"
+      },
+      {
+        "namespace": "fontSettings",
+        "type": "namespace",
+        "description": "Chrome API: fontSettings"
+      },
+      {
+        "namespace": "gcm",
+        "type": "namespace",
+        "description": "Chrome API: gcm"
+      },
+      {
+        "namespace": "history",
+        "type": "namespace",
+        "description": "Chrome API: history"
+      },
+      {
+        "namespace": "i18n",
+        "type": "namespace",
+        "description": "Chrome API: i18n"
+      },
+      {
+        "namespace": "identity",
+        "type": "namespace",
+        "description": "Chrome API: identity"
+      },
+      {
+        "namespace": "idle",
+        "type": "namespace",
+        "description": "Chrome API: idle"
+      },
+      {
+        "namespace": "input.ime",
+        "type": "namespace",
+        "description": "Chrome API: input.ime"
+      },
+      {
+        "namespace": "loginState",
+        "type": "namespace",
+        "description": "Chrome API: loginState"
+      },
+      {
+        "namespace": "management",
+        "type": "namespace",
+        "description": "Chrome API: management"
+      },
+      {
+        "namespace": "notifications",
+        "type": "namespace",
+        "description": "Chrome API: notifications"
+      },
+      {
+        "namespace": "offscreen",
+        "type": "namespace",
+        "description": "Chrome API: offscreen"
+      },
+      {
+        "namespace": "pageCapture",
+        "type": "namespace",
+        "description": "Chrome API: pageCapture"
+      },
+      {
+        "namespace": "platformKeys",
+        "type": "namespace",
+        "description": "Chrome API: platformKeys"
+      },
+      {
+        "namespace": "power",
+        "type": "namespace",
+        "description": "Chrome API: power"
+      },
+      {
+        "namespace": "printerProvider",
+        "type": "namespace",
+        "description": "Chrome API: printerProvider"
+      },
+      {
+        "namespace": "printing",
+        "type": "namespace",
+        "description": "Chrome API: printing"
+      },
+      {
+        "namespace": "printingMetrics",
+        "type": "namespace",
+        "description": "Chrome API: printingMetrics"
+      },
+      {
+        "namespace": "privacy",
+        "type": "namespace",
+        "description": "Chrome API: privacy"
+      },
+      {
+        "namespace": "proxy",
+        "type": "namespace",
+        "description": "Chrome API: proxy"
+      },
+      {
+        "namespace": "scripting",
+        "type": "namespace",
+        "description": "Chrome API: scripting"
+      },
+      {
+        "namespace": "search",
+        "type": "namespace",
+        "description": "Chrome API: search"
+      },
+      {
+        "namespace": "sessions",
+        "type": "namespace",
+        "description": "Chrome API: sessions"
+      },
+      {
+        "namespace": "sidePanel",
+        "type": "namespace",
+        "description": "Chrome API: sidePanel"
+      },
+      {
+        "namespace": "storage",
+        "type": "namespace",
+        "description": "Chrome API: storage"
+      },
+      {
+        "namespace": "system.cpu",
+        "type": "namespace",
+        "description": "Chrome API: system.cpu"
+      },
+      {
+        "namespace": "system.memory",
+        "type": "namespace",
+        "description": "Chrome API: system.memory"
+      },
+      {
+        "namespace": "system.storage",
+        "type": "namespace",
+        "description": "Chrome API: system.storage"
+      },
+      {
+        "namespace": "tabCapture",
+        "type": "namespace",
+        "description": "Chrome API: tabCapture"
+      },
+      {
+        "namespace": "tabGroups",
+        "type": "namespace",
+        "description": "Chrome API: tabGroups"
+      },
+      {
+        "namespace": "tabs",
+        "type": "namespace",
+        "description": "Chrome API: tabs"
+      },
+      {
+        "namespace": "topSites",
+        "type": "namespace",
+        "description": "Chrome API: topSites"
+      },
+      {
+        "namespace": "tts",
+        "type": "namespace",
+        "description": "Chrome API: tts"
+      },
+      {
+        "namespace": "ttsEngine",
+        "type": "namespace",
+        "description": "Chrome API: ttsEngine"
+      },
+      {
+        "namespace": "types",
+        "type": "namespace",
+        "description": "Chrome API: types"
+      },
+      {
+        "namespace": "unlimitedStorage",
+        "type": "namespace",
+        "description": "Chrome API: unlimitedStorage"
+      },
+      {
+        "namespace": "userScripts",
+        "type": "namespace",
+        "description": "Chrome API: userScripts"
+      },
+      {
+        "namespace": "vpnProvider",
+        "type": "namespace",
+        "description": "Chrome API: vpnProvider"
+      },
+      {
+        "namespace": "wallpaper",
+        "type": "namespace",
+        "description": "Chrome API: wallpaper"
+      },
+      {
+        "namespace": "webNavigation",
+        "type": "namespace",
+        "description": "Chrome API: webNavigation"
+      },
+      {
+        "namespace": "webRequest",
+        "type": "namespace",
+        "description": "Chrome API: webRequest"
+      },
+      {
+        "namespace": "windows",
+        "type": "namespace",
+        "description": "Chrome API: windows"
+      },
+      {
+        "namespace": "edgeCert",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeCert"
+      },
+      {
+        "namespace": "edgeEducation",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeEducation"
+      },
+      {
+        "namespace": "edgeFeedback",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeFeedback"
+      },
+      {
+        "namespace": "edgeManageExt",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeManageExt"
+      },
+      {
+        "namespace": "edgeNetwork",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeNetwork"
+      },
+      {
+        "namespace": "edgeOrganization",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeOrganization"
+      },
+      {
+        "namespace": "edgePronunciation",
+        "type": "namespace",
+        "description": "Edge-specific API: edgePronunciation"
+      },
+      {
+        "namespace": "edgeReadingList",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeReadingList"
+      },
+      {
+        "namespace": "edgeSettings",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeSettings"
+      },
+      {
+        "namespace": "edgeShopping",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeShopping"
+      },
+      {
+        "namespace": "edgeSiteFeatures",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeSiteFeatures"
+      },
+      {
+        "namespace": "edgeWebView",
+        "type": "namespace",
+        "description": "Edge-specific API: edgeWebView"
+      },
+      {
+        "namespace": "enterprise.certificateProvider",
+        "type": "namespace",
+        "description": "Edge-specific API: enterprise.certificateProvider"
+      },
+      {
+        "namespace": "enterprise.deviceInsights",
+        "type": "namespace",
+        "description": "Edge-specific API: enterprise.deviceInsights"
+      },
+      {
+        "namespace": "enterprise.authentication",
+        "type": "namespace",
+        "description": "Edge-specific API: enterprise.authentication"
+      },
+      {
+        "namespace": "enterprise.messaging",
+        "type": "namespace",
+        "description": "Edge-specific API: enterprise.messaging"
+      }
+    ],
+    "removed": [],
+    "modified": []
+  }
+}

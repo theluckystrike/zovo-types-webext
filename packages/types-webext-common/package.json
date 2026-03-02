@@ -1,0 +1,9 @@
+{
+  "name": "@zovo/types-webext-common",
+  "version": "1.0.0",
+  "description": "Cross-browser compatible WebExtension types",
+  "types": "src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}

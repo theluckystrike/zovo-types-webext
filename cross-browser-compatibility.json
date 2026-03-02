@@ -1,0 +1,1671 @@
+{
+  "metadata": {
+    "generated": "2026-03-02T09:11:30.197Z",
+    "version": "1.0.0",
+    "browsers": {
+      "chrome": 60,
+      "firefox": 50,
+      "safari": 26,
+      "edge": 76
+    },
+    "browserVersions": {
+      "chrome": "120",
+      "firefox": "121",
+      "safari": "17",
+      "edge": "120"
+    }
+  },
+  "apiMatrix": {
+    "alarms": {
+      "description": "Chrome API: alarms",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "bookmarks": {
+      "description": "Chrome API: bookmarks",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "browserAction": {
+      "description": "Chrome API: browserAction",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "browsingData": {
+      "description": "Chrome API: browsingData",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "clipboard": {
+      "description": "Chrome API: clipboard",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "contentSettings": {
+      "description": "Chrome API: contentSettings",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "contextMenus": {
+      "description": "Chrome API: contextMenus",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "cookies": {
+      "description": "Chrome API: cookies",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "debugger": {
+      "description": "Chrome API: debugger",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "declarativeContent": {
+      "description": "Chrome API: declarativeContent",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "declarativeNetRequest": {
+      "description": "Chrome API: declarativeNetRequest",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "desktopCapture": {
+      "description": "Chrome API: desktopCapture",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "devtools": {
+      "description": "Chrome API: devtools",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "downloads": {
+      "description": "Chrome API: downloads",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.deviceAttributes": {
+      "description": "Chrome API: enterprise.deviceAttributes",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.hardwarePlatform": {
+      "description": "Chrome API: enterprise.hardwarePlatform",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.networkingAttributes": {
+      "description": "Chrome API: enterprise.networkingAttributes",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.platformKeys": {
+      "description": "Chrome API: enterprise.platformKeys",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "extension": {
+      "description": "Chrome API: extension",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "fontSettings": {
+      "description": "Chrome API: fontSettings",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "gcm": {
+      "description": "Chrome API: gcm",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "history": {
+      "description": "Chrome API: history",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "i18n": {
+      "description": "Chrome API: i18n",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "identity": {
+      "description": "Chrome API: identity",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "idle": {
+      "description": "Chrome API: idle",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "input.ime": {
+      "description": "Chrome API: input.ime",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "loginState": {
+      "description": "Chrome API: loginState",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "management": {
+      "description": "Chrome API: management",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "notifications": {
+      "description": "Chrome API: notifications",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "offscreen": {
+      "description": "Chrome API: offscreen",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "pageCapture": {
+      "description": "Chrome API: pageCapture",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "platformKeys": {
+      "description": "Chrome API: platformKeys",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "power": {
+      "description": "Chrome API: power",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "printerProvider": {
+      "description": "Chrome API: printerProvider",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "printing": {
+      "description": "Chrome API: printing",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "printingMetrics": {
+      "description": "Chrome API: printingMetrics",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "privacy": {
+      "description": "Chrome API: privacy",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "proxy": {
+      "description": "Chrome API: proxy",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "scripting": {
+      "description": "Chrome API: scripting",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "search": {
+      "description": "Chrome API: search",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "sessions": {
+      "description": "Chrome API: sessions",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "sidePanel": {
+      "description": "Chrome API: sidePanel",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "storage": {
+      "description": "Chrome API: storage",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "system.cpu": {
+      "description": "Chrome API: system.cpu",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "system.memory": {
+      "description": "Chrome API: system.memory",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "system.storage": {
+      "description": "Chrome API: system.storage",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "tabCapture": {
+      "description": "Chrome API: tabCapture",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "tabGroups": {
+      "description": "Chrome API: tabGroups",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "tabs": {
+      "description": "Chrome API: tabs",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "topSites": {
+      "description": "Chrome API: topSites",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "tts": {
+      "description": "Chrome API: tts",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "ttsEngine": {
+      "description": "Chrome API: ttsEngine",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "types": {
+      "description": "Chrome API: types",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "unlimitedStorage": {
+      "description": "Chrome API: unlimitedStorage",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "userScripts": {
+      "description": "Chrome API: userScripts",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "userScripts"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "vpnProvider": {
+      "description": "Chrome API: vpnProvider",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "wallpaper": {
+      "description": "Chrome API: wallpaper",
+      "support": {
+        "chrome": true,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "webNavigation": {
+      "description": "Chrome API: webNavigation",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "webRequest": {
+      "description": "Chrome API: webRequest",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "windows": {
+      "description": "Chrome API: windows",
+      "support": {
+        "chrome": true,
+        "firefox": true,
+        "safari": true,
+        "edge": true
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "clipboardRead": {
+      "description": "Firefox API: clipboardRead",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "clipboardWrite": {
+      "description": "Firefox API: clipboardWrite",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "composite": {
+      "description": "Firefox API: composite",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "experimental": {
+      "description": "Firefox API: experimental",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "extensionTypes": {
+      "description": "Firefox API: extensionTypes",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "find": {
+      "description": "Firefox API: find",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "gecko": {
+      "description": "Firefox API: gecko",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "menus": {
+      "description": "Firefox API: menus",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "nativeMessaging": {
+      "description": "Firefox API: nativeMessaging",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "omnibox": {
+      "description": "Firefox API: omnibox",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "pageAction": {
+      "description": "Firefox API: pageAction",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "permissions": {
+      "description": "Firefox API: permissions",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "pkcs11": {
+      "description": "Firefox API: pkcs11",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "runtime": {
+      "description": "Firefox API: runtime",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": true,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "sidebarAction": {
+      "description": "Firefox API: sidebarAction",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "theme": {
+      "description": "Firefox API: theme",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "urlbar": {
+      "description": "Firefox API: urlbar",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "browserSettings": {
+      "description": "Browser settings API",
+      "support": {
+        "chrome": false,
+        "firefox": true,
+        "safari": false,
+        "edge": false
+      },
+      "permissions": [
+        "browserSettings"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "_manifest": {
+      "description": "Manifest v3 support",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": true,
+        "edge": false
+      },
+      "permissions": [],
+      "functions": [],
+      "events": []
+    },
+    "edgeCert": {
+      "description": "Edge-specific API: edgeCert",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeCert"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeEducation": {
+      "description": "Edge-specific API: edgeEducation",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeEducation"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeFeedback": {
+      "description": "Edge-specific API: edgeFeedback",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeFeedback"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeManageExt": {
+      "description": "Edge-specific API: edgeManageExt",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeManageExt"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeNetwork": {
+      "description": "Edge-specific API: edgeNetwork",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeNetwork"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeOrganization": {
+      "description": "Edge-specific API: edgeOrganization",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeOrganization"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgePronunciation": {
+      "description": "Edge-specific API: edgePronunciation",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgePronunciation"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeReadingList": {
+      "description": "Edge-specific API: edgeReadingList",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeReadingList"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeSettings": {
+      "description": "Edge-specific API: edgeSettings",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeSettings"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeShopping": {
+      "description": "Edge-specific API: edgeShopping",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeShopping"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeSiteFeatures": {
+      "description": "Edge-specific API: edgeSiteFeatures",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeSiteFeatures"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "edgeWebView": {
+      "description": "Edge-specific API: edgeWebView",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "edgeWebView"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.certificateProvider": {
+      "description": "Edge-specific API: enterprise.certificateProvider",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "enterprise.certificateProvider"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.deviceInsights": {
+      "description": "Edge-specific API: enterprise.deviceInsights",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "enterprise.deviceInsights"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.authentication": {
+      "description": "Edge-specific API: enterprise.authentication",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "enterprise.authentication"
+      ],
+      "functions": [],
+      "events": []
+    },
+    "enterprise.messaging": {
+      "description": "Edge-specific API: enterprise.messaging",
+      "support": {
+        "chrome": false,
+        "firefox": false,
+        "safari": false,
+        "edge": true
+      },
+      "permissions": [
+        "enterprise.messaging"
+      ],
+      "functions": [],
+      "events": []
+    }
+  },
+  "commonAPIs": [
+    "alarms",
+    "bookmarks",
+    "browserAction",
+    "contextMenus",
+    "cookies",
+    "devtools",
+    "downloads",
+    "extension",
+    "i18n",
+    "identity",
+    "idle",
+    "management",
+    "notifications",
+    "pageCapture",
+    "privacy",
+    "proxy",
+    "scripting",
+    "storage",
+    "tabs",
+    "topSites",
+    "webNavigation",
+    "webRequest",
+    "windows"
+  ],
+  "browserSpecificAPIs": {
+    "chrome": [
+      "browsingData",
+      "clipboard",
+      "contentSettings",
+      "debugger",
+      "declarativeContent",
+      "declarativeNetRequest",
+      "desktopCapture",
+      "enterprise.deviceAttributes",
+      "enterprise.hardwarePlatform",
+      "enterprise.networkingAttributes",
+      "enterprise.platformKeys",
+      "fontSettings",
+      "gcm",
+      "history",
+      "input.ime",
+      "loginState",
+      "offscreen",
+      "platformKeys",
+      "power",
+      "printerProvider",
+      "printing",
+      "printingMetrics",
+      "search",
+      "sessions",
+      "sidePanel",
+      "system.cpu",
+      "system.memory",
+      "system.storage",
+      "tabCapture",
+      "tabGroups",
+      "tts",
+      "ttsEngine",
+      "types",
+      "unlimitedStorage",
+      "userScripts",
+      "vpnProvider",
+      "wallpaper"
+    ],
+    "firefox": [
+      "browsingData",
+      "history",
+      "search",
+      "sessions",
+      "tts",
+      "ttsEngine",
+      "types",
+      "unlimitedStorage",
+      "userScripts",
+      "clipboardRead",
+      "clipboardWrite",
+      "composite",
+      "experimental",
+      "extensionTypes",
+      "find",
+      "gecko",
+      "menus",
+      "nativeMessaging",
+      "omnibox",
+      "pageAction",
+      "permissions",
+      "pkcs11",
+      "runtime",
+      "sidebarAction",
+      "theme",
+      "urlbar",
+      "browserSettings"
+    ],
+    "safari": [
+      "clipboard",
+      "runtime",
+      "_manifest"
+    ],
+    "edge": [
+      "browsingData",
+      "clipboard",
+      "contentSettings",
+      "debugger",
+      "declarativeContent",
+      "declarativeNetRequest",
+      "desktopCapture",
+      "enterprise.deviceAttributes",
+      "enterprise.hardwarePlatform",
+      "enterprise.networkingAttributes",
+      "enterprise.platformKeys",
+      "fontSettings",
+      "gcm",
+      "history",
+      "input.ime",
+      "loginState",
+      "offscreen",
+      "platformKeys",
+      "power",
+      "printerProvider",
+      "printing",
+      "printingMetrics",
+      "search",
+      "sessions",
+      "sidePanel",
+      "system.cpu",
+      "system.memory",
+      "system.storage",
+      "tabCapture",
+      "tabGroups",
+      "tts",
+      "ttsEngine",
+      "types",
+      "unlimitedStorage",
+      "userScripts",
+      "vpnProvider",
+      "wallpaper",
+      "edgeCert",
+      "edgeEducation",
+      "edgeFeedback",
+      "edgeManageExt",
+      "edgeNetwork",
+      "edgeOrganization",
+      "edgePronunciation",
+      "edgeReadingList",
+      "edgeSettings",
+      "edgeShopping",
+      "edgeSiteFeatures",
+      "edgeWebView",
+      "enterprise.certificateProvider",
+      "enterprise.deviceInsights",
+      "enterprise.authentication",
+      "enterprise.messaging"
+    ]
+  },
+  "permissions": {
+    "userScripts": {
+      "description": "Requires \"userScripts\" permission",
+      "apis": [
+        "userScripts"
+      ]
+    },
+    "browserSettings": {
+      "description": "Requires \"browserSettings\" permission",
+      "apis": [
+        "browserSettings"
+      ]
+    },
+    "edgeCert": {
+      "description": "Requires \"edgeCert\" permission",
+      "apis": [
+        "edgeCert"
+      ]
+    },
+    "edgeEducation": {
+      "description": "Requires \"edgeEducation\" permission",
+      "apis": [
+        "edgeEducation"
+      ]
+    },
+    "edgeFeedback": {
+      "description": "Requires \"edgeFeedback\" permission",
+      "apis": [
+        "edgeFeedback"
+      ]
+    },
+    "edgeManageExt": {
+      "description": "Requires \"edgeManageExt\" permission",
+      "apis": [
+        "edgeManageExt"
+      ]
+    },
+    "edgeNetwork": {
+      "description": "Requires \"edgeNetwork\" permission",
+      "apis": [
+        "edgeNetwork"
+      ]
+    },
+    "edgeOrganization": {
+      "description": "Requires \"edgeOrganization\" permission",
+      "apis": [
+        "edgeOrganization"
+      ]
+    },
+    "edgePronunciation": {
+      "description": "Requires \"edgePronunciation\" permission",
+      "apis": [
+        "edgePronunciation"
+      ]
+    },
+    "edgeReadingList": {
+      "description": "Requires \"edgeReadingList\" permission",
+      "apis": [
+        "edgeReadingList"
+      ]
+    },
+    "edgeSettings": {
+      "description": "Requires \"edgeSettings\" permission",
+      "apis": [
+        "edgeSettings"
+      ]
+    },
+    "edgeShopping": {
+      "description": "Requires \"edgeShopping\" permission",
+      "apis": [
+        "edgeShopping"
+      ]
+    },
+    "edgeSiteFeatures": {
+      "description": "Requires \"edgeSiteFeatures\" permission",
+      "apis": [
+        "edgeSiteFeatures"
+      ]
+    },
+    "edgeWebView": {
+      "description": "Requires \"edgeWebView\" permission",
+      "apis": [
+        "edgeWebView"
+      ]
+    },
+    "enterprise.certificateProvider": {
+      "description": "Requires \"enterprise.certificateProvider\" permission",
+      "apis": [
+        "enterprise.certificateProvider"
+      ]
+    },
+    "enterprise.deviceInsights": {
+      "description": "Requires \"enterprise.deviceInsights\" permission",
+      "apis": [
+        "enterprise.deviceInsights"
+      ]
+    },
+    "enterprise.authentication": {
+      "description": "Requires \"enterprise.authentication\" permission",
+      "apis": [
+        "enterprise.authentication"
+      ]
+    },
+    "enterprise.messaging": {
+      "description": "Requires \"enterprise.messaging\" permission",
+      "apis": [
+        "enterprise.messaging"
+      ]
+    }
+  },
+  "polyfills": {
+    "browsingData": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "history": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "search": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "sessions": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "tts": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "ttsEngine": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "types": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "unlimitedStorage": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "userScripts": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "clipboardRead": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "clipboardWrite": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "composite": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "experimental": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "extensionTypes": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "find": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "gecko": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "menus": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "nativeMessaging": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "omnibox": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "pageAction": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "permissions": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "pkcs11": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "runtime": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      },
+      {
+        "browser": "safari",
+        "message": "API only available in Safari.",
+        "alternative": "Consider using Chrome API with Safari polyfill"
+      }
+    ],
+    "sidebarAction": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "theme": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "urlbar": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "browserSettings": [
+      {
+        "browser": "firefox",
+        "message": "API only available in Firefox. Use feature detection.",
+        "alternative": "Check if method exists before calling"
+      }
+    ],
+    "clipboard": [
+      {
+        "browser": "safari",
+        "message": "API only available in Safari.",
+        "alternative": "Consider using Chrome API with Safari polyfill"
+      }
+    ],
+    "_manifest": [
+      {
+        "browser": "safari",
+        "message": "API only available in Safari.",
+        "alternative": "Consider using Chrome API with Safari polyfill"
+      }
+    ]
+  }
+}

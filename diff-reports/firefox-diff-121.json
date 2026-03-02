@@ -1,0 +1,260 @@
+{
+  "browser": "firefox",
+  "fromVersion": "0.0.0",
+  "toVersion": "121",
+  "generated": "2026-03-02T09:11:13.812Z",
+  "added": [
+    {
+      "namespace": "alarms",
+      "type": "namespace",
+      "description": "Firefox API: alarms"
+    },
+    {
+      "namespace": "bookmarks",
+      "type": "namespace",
+      "description": "Firefox API: bookmarks"
+    },
+    {
+      "namespace": "browserAction",
+      "type": "namespace",
+      "description": "Firefox API: browserAction"
+    },
+    {
+      "namespace": "browsingData",
+      "type": "namespace",
+      "description": "Firefox API: browsingData"
+    },
+    {
+      "namespace": "clipboardRead",
+      "type": "namespace",
+      "description": "Firefox API: clipboardRead"
+    },
+    {
+      "namespace": "clipboardWrite",
+      "type": "namespace",
+      "description": "Firefox API: clipboardWrite"
+    },
+    {
+      "namespace": "composite",
+      "type": "namespace",
+      "description": "Firefox API: composite"
+    },
+    {
+      "namespace": "contextMenus",
+      "type": "namespace",
+      "description": "Firefox API: contextMenus"
+    },
+    {
+      "namespace": "cookies",
+      "type": "namespace",
+      "description": "Firefox API: cookies"
+    },
+    {
+      "namespace": "devtools",
+      "type": "namespace",
+      "description": "Firefox API: devtools"
+    },
+    {
+      "namespace": "downloads",
+      "type": "namespace",
+      "description": "Firefox API: downloads"
+    },
+    {
+      "namespace": "experimental",
+      "type": "namespace",
+      "description": "Firefox API: experimental"
+    },
+    {
+      "namespace": "extension",
+      "type": "namespace",
+      "description": "Firefox API: extension"
+    },
+    {
+      "namespace": "extensionTypes",
+      "type": "namespace",
+      "description": "Firefox API: extensionTypes"
+    },
+    {
+      "namespace": "find",
+      "type": "namespace",
+      "description": "Firefox API: find"
+    },
+    {
+      "namespace": "gecko",
+      "type": "namespace",
+      "description": "Firefox API: gecko"
+    },
+    {
+      "namespace": "history",
+      "type": "namespace",
+      "description": "Firefox API: history"
+    },
+    {
+      "namespace": "i18n",
+      "type": "namespace",
+      "description": "Firefox API: i18n"
+    },
+    {
+      "namespace": "identity",
+      "type": "namespace",
+      "description": "Firefox API: identity"
+    },
+    {
+      "namespace": "idle",
+      "type": "namespace",
+      "description": "Firefox API: idle"
+    },
+    {
+      "namespace": "management",
+      "type": "namespace",
+      "description": "Firefox API: management"
+    },
+    {
+      "namespace": "menus",
+      "type": "namespace",
+      "description": "Firefox API: menus"
+    },
+    {
+      "namespace": "nativeMessaging",
+      "type": "namespace",
+      "description": "Firefox API: nativeMessaging"
+    },
+    {
+      "namespace": "notifications",
+      "type": "namespace",
+      "description": "Firefox API: notifications"
+    },
+    {
+      "namespace": "omnibox",
+      "type": "namespace",
+      "description": "Firefox API: omnibox"
+    },
+    {
+      "namespace": "pageAction",
+      "type": "namespace",
+      "description": "Firefox API: pageAction"
+    },
+    {
+      "namespace": "pageCapture",
+      "type": "namespace",
+      "description": "Firefox API: pageCapture"
+    },
+    {
+      "namespace": "permissions",
+      "type": "namespace",
+      "description": "Firefox API: permissions"
+    },
+    {
+      "namespace": "pkcs11",
+      "type": "namespace",
+      "description": "Firefox API: pkcs11"
+    },
+    {
+      "namespace": "privacy",
+      "type": "namespace",
+      "description": "Firefox API: privacy"
+    },
+    {
+      "namespace": "proxy",
+      "type": "namespace",
+      "description": "Firefox API: proxy"
+    },
+    {
+      "namespace": "runtime",
+      "type": "namespace",
+      "description": "Firefox API: runtime"
+    },
+    {
+      "namespace": "scripting",
+      "type": "namespace",
+      "description": "Firefox API: scripting"
+    },
+    {
+      "namespace": "search",
+      "type": "namespace",
+      "description": "Firefox API: search"
+    },
+    {
+      "namespace": "sessions",
+      "type": "namespace",
+      "description": "Firefox API: sessions"
+    },
+    {
+      "namespace": "sidebarAction",
+      "type": "namespace",
+      "description": "Firefox API: sidebarAction"
+    },
+    {
+      "namespace": "storage",
+      "type": "namespace",
+      "description": "Firefox API: storage"
+    },
+    {
+      "namespace": "tabs",
+      "type": "namespace",
+      "description": "Firefox API: tabs"
+    },
+    {
+      "namespace": "theme",
+      "type": "namespace",
+      "description": "Firefox API: theme"
+    },
+    {
+      "namespace": "topSites",
+      "type": "namespace",
+      "description": "Firefox API: topSites"
+    },
+    {
+      "namespace": "tts",
+      "type": "namespace",
+      "description": "Firefox API: tts"
+    },
+    {
+      "namespace": "ttsEngine",
+      "type": "namespace",
+      "description": "Firefox API: ttsEngine"
+    },
+    {
+      "namespace": "types",
+      "type": "namespace",
+      "description": "Firefox API: types"
+    },
+    {
+      "namespace": "unlimitedStorage",
+      "type": "namespace",
+      "description": "Firefox API: unlimitedStorage"
+    },
+    {
+      "namespace": "urlbar",
+      "type": "namespace",
+      "description": "Firefox API: urlbar"
+    },
+    {
+      "namespace": "webNavigation",
+      "type": "namespace",
+      "description": "Firefox API: webNavigation"
+    },
+    {
+      "namespace": "webRequest",
+      "type": "namespace",
+      "description": "Firefox API: webRequest"
+    },
+    {
+      "namespace": "windows",
+      "type": "namespace",
+      "description": "Firefox API: windows"
+    },
+    {
+      "namespace": "browserSettings",
+      "type": "namespace",
+      "description": "Browser settings API"
+    },
+    {
+      "namespace": "userScripts",
+      "type": "namespace",
+      "description": "User Scripts API"
+    }
+  ],
+  "removed": [],
+  "modified": []
+}

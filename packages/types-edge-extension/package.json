@@ -1,0 +1,9 @@
+{
+  "name": "@zovo/types-edge-extension",
+  "version": "1.0.0",
+  "description": "TypeScript definitions for Microsoft Edge Extensions",
+  "types": "src/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}

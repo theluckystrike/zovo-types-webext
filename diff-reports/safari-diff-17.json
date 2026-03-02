@@ -1,0 +1,140 @@
+{
+  "browser": "safari",
+  "fromVersion": "0.0.0",
+  "toVersion": "17",
+  "generated": "2026-03-02T09:11:13.812Z",
+  "added": [
+    {
+      "namespace": "alarms",
+      "type": "namespace",
+      "description": "Safari API: alarms"
+    },
+    {
+      "namespace": "bookmarks",
+      "type": "namespace",
+      "description": "Safari API: bookmarks"
+    },
+    {
+      "namespace": "browserAction",
+      "type": "namespace",
+      "description": "Safari API: browserAction"
+    },
+    {
+      "namespace": "clipboard",
+      "type": "namespace",
+      "description": "Safari API: clipboard"
+    },
+    {
+      "namespace": "contextMenus",
+      "type": "namespace",
+      "description": "Safari API: contextMenus"
+    },
+    {
+      "namespace": "cookies",
+      "type": "namespace",
+      "description": "Safari API: cookies"
+    },
+    {
+      "namespace": "devtools",
+      "type": "namespace",
+      "description": "Safari API: devtools"
+    },
+    {
+      "namespace": "downloads",
+      "type": "namespace",
+      "description": "Safari API: downloads"
+    },
+    {
+      "namespace": "extension",
+      "type": "namespace",
+      "description": "Safari API: extension"
+    },
+    {
+      "namespace": "i18n",
+      "type": "namespace",
+      "description": "Safari API: i18n"
+    },
+    {
+      "namespace": "identity",
+      "type": "namespace",
+      "description": "Safari API: identity"
+    },
+    {
+      "namespace": "idle",
+      "type": "namespace",
+      "description": "Safari API: idle"
+    },
+    {
+      "namespace": "management",
+      "type": "namespace",
+      "description": "Safari API: management"
+    },
+    {
+      "namespace": "notifications",
+      "type": "namespace",
+      "description": "Safari API: notifications"
+    },
+    {
+      "namespace": "pageCapture",
+      "type": "namespace",
+      "description": "Safari API: pageCapture"
+    },
+    {
+      "namespace": "privacy",
+      "type": "namespace",
+      "description": "Safari API: privacy"
+    },
+    {
+      "namespace": "proxy",
+      "type": "namespace",
+      "description": "Safari API: proxy"
+    },
+    {
+      "namespace": "runtime",
+      "type": "namespace",
+      "description": "Safari API: runtime"
+    },
+    {
+      "namespace": "scripting",
+      "type": "namespace",
+      "description": "Safari API: scripting"
+    },
+    {
+      "namespace": "storage",
+      "type": "namespace",
+      "description": "Safari API: storage"
+    },
+    {
+      "namespace": "tabs",
+      "type": "namespace",
+      "description": "Safari API: tabs"
+    },
+    {
+      "namespace": "topSites",
+      "type": "namespace",
+      "description": "Safari API: topSites"
+    },
+    {
+      "namespace": "webNavigation",
+      "type": "namespace",
+      "description": "Safari API: webNavigation"
+    },
+    {
+      "namespace": "webRequest",
+      "type": "namespace",
+      "description": "Safari API: webRequest"
+    },
+    {
+      "namespace": "windows",
+      "type": "namespace",
+      "description": "Safari API: windows"
+    },
+    {
+      "namespace": "_manifest",
+      "type": "namespace",
+      "description": "Manifest v3 support"
+    }
+  ],
+  "removed": [],
+  "modified": []
+}

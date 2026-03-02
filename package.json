@@ -1,0 +1,35 @@
+{
+  "name": "@zovo/types-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comprehensive browser extension type definitions for Chrome, Firefox, Safari, and Edge",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "fetch": "node scripts/fetch-apis.js",
+    "parse": "node scripts/parse-definitions.js",
+    "generate": "node scripts/generate-types.js",
+    "compile": "npm run compile --workspaces",
+    "test": "node scripts/run-tests.js",
+    "diff": "node scripts/generate-diff.js",
+    "changelog": "node scripts/generate-changelog.js",
+    "blog": "node scripts/generate-blog-posts.js",
+    "compat": "node scripts/generate-compatibility.js",
+    "build": "npm run fetch && npm run parse && npm run generate && npm run compile",
+    "publish": "npm run build && npm run test && npm run changelog && node scripts/publish.js",
+    "loop": "node scripts/weekly-loop.js",
+    "vscode": "node scripts/vscode-improvements.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zovo/zovo-types"
+  }
+}

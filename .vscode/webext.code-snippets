@@ -1,0 +1,105 @@
+{
+  "chrome-tabs-query": {
+    "prefix": "chrome-tabs-query",
+    "body": [
+      "const tabs = await chrome.tabs.query({",
+      "  $1active: true,",
+      "  $2currentWindow: true",
+      "});",
+      "$0"
+    ],
+    "description": "Query tabs with async/await"
+  },
+  "chrome-storage-get": {
+    "prefix": "chrome-storage-get",
+    "body": [
+      "const result = await chrome.storage.local.get([\"$1key\"]);",
+      "const value = result.$1key;",
+      "$0"
+    ],
+    "description": "Get from storage with async/await"
+  },
+  "chrome-storage-set": {
+    "prefix": "chrome-storage-set",
+    "body": [
+      "await chrome.storage.local.set({",
+      "  $1key: $2value",
+      "});",
+      "$0"
+    ],
+    "description": "Set storage with async/await"
+  },
+  "chrome-message-background": {
+    "prefix": "chrome-message-bg",
+    "body": [
+      "chrome.runtime.onMessage.addListener(",
+      "  (message, sender, sendResponse) => {",
+      "    switch (message.type) {",
+      "      case '$1ping':",
+      "        sendResponse({ type: 'pong' });",
+      "        break;",
+      "    }",
+      "  }",
+      ");",
+      "$0"
+    ],
+    "description": "Background script message listener"
+  },
+  "chrome-message-content": {
+    "prefix": "chrome-message-content",
+    "body": [
+      "const response = await chrome.runtime.sendMessage({",
+      "  type: '$1ping',",
+      "  payload: $2",
+      "});",
+      "$0"
+    ],
+    "description": "Send message from content script"
+  },
+  "chrome-context-menu": {
+    "prefix": "chrome-context-menu",
+    "body": [
+      "chrome.contextMenus.create({",
+      "  id: '$1my-menu',",
+      "  title: '$2My Menu',",
+      "  contexts: ['page', 'selection']",
+      "});",
+      "",
+      "chrome.contextMenus.onClicked.addListener((info, tab) => {",
+      "  if (info.menuItemId === '$1my-menu') {",
+      "    $0",
+      "  }",
+      "});",
+      "$0"
+    ],
+    "description": "Create context menu"
+  },
+  "chrome-alarm": {
+    "prefix": "chrome-alarm",
+    "body": [
+      "chrome.alarms.create('$1my-alarm', {",
+      "  delayInMinutes: $2,",
+      "  periodInMinutes: $3",
+      "});",
+      "",
+      "chrome.alarms.onAlarm.addListener((alarm) => {",
+      "  if (alarm.name === '$1my-alarm') {",
+      "    $0",
+      "  }",
+      "});",
+      "$0"
+    ],
+    "description": "Create alarm with listener"
+  },
+  "chrome-tabs-create": {
+    "prefix": "chrome-tabs-create",
+    "body": [
+      "const tab = await chrome.tabs.create({",
+      "  url: '$1https://example.com',",
+      "  active: true",
+      "});",
+      "$0"
+    ],
+    "description": "Create new tab"
+  }
+}
