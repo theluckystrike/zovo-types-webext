@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PROJECT_ROOT = '/Users/mike/zovo-types';
+const PROJECT_ROOT = path.resolve(__dirname, '..');
 const TESTS_DIR = path.join(PROJECT_ROOT, 'tests');
 const PACKAGES_DIR = path.join(PROJECT_ROOT, 'packages');
 
