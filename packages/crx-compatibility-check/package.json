@@ -2,9 +2,14 @@
   "name": "@zovo/crx-compatibility-check",
   "version": "1.0.0",
   "description": "Check Chrome extension cross-browser compatibility",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "crx-compatibility-check": "./dist/cli.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -22,5 +27,12 @@
     "firefox",
     "safari"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -2,7 +2,21 @@
   "name": "@zovo/types-safari-extension",
   "version": "1.0.0",
   "description": "TypeScript definitions for Safari Extensions",
+  "main": "src/index.d.ts",
   "types": "src/index.d.ts",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "safari-extension",
+    "typescript",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   }

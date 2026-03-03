@@ -38,7 +38,19 @@ See [firefox/popup.ts](firefox/popup.ts) for Firefox-specific APIs:
 ```bash
 # Install types
 npm install @zovo/types-chrome-extension
+```
 
-# In your TypeScript files
-import { chrome } from '@zovo/types-chrome-extension';
+Then add to your `tsconfig.json`:
+```json
+{
+  "compilerOptions": {
+    "types": ["@zovo/types-chrome-extension"]
+  }
+}
+```
+
+The `chrome` API is now available globally in your TypeScript files. Alternatively, use an ambient import:
+
+```typescript
+/// <reference types="@zovo/types-chrome-extension" />
 ```

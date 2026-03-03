@@ -30,8 +30,19 @@ Add to `tsconfig.json`:
 ```
 
 ### TypeScript
+
+After adding types to your `tsconfig.json`, the `chrome` API is available globally:
+
 ```typescript
-import { chrome } from '@zovo/types-chrome-extension';
+chrome.tabs.query({ active: true }, (tabs) => {
+  console.log(tabs[0].id);
+});
+```
+
+Or use an ambient import in specific files:
+
+```typescript
+/// <reference types="@zovo/types-chrome-extension" />
 
 chrome.tabs.query({ active: true }, (tabs) => {
   console.log(tabs[0].id);

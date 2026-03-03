@@ -6,6 +6,9 @@
   "bin": {
     "crx-size-analyzer": "./dist/cli.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -29,5 +32,12 @@
     "size-analysis",
     "bundle"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

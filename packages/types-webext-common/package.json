@@ -2,7 +2,25 @@
   "name": "@zovo/types-webext-common",
   "version": "1.0.0",
   "description": "Cross-browser compatible WebExtension types",
+  "main": "src/index.d.ts",
   "types": "src/index.d.ts",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "webextension",
+    "chrome",
+    "firefox",
+    "safari",
+    "edge",
+    "typescript",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   }

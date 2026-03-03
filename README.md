@@ -46,9 +46,9 @@ Add to your `tsconfig.json`:
 
 ### Usage
 
-```typescript
-import { chrome } from '@zovo/types-chrome-extension';
+Once you've added the types to your `tsconfig.json`, the `chrome` API is available globally:
 
+```typescript
 // Query tabs
 const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -60,6 +60,15 @@ const result = await chrome.storage.local.get('key');
 chrome.runtime.sendMessage({ type: 'GREETING' }, (response) => {
   console.log(response);
 });
+```
+
+Alternatively, you can use an ambient import in each file that needs chrome types:
+
+```typescript
+/// <reference types="@zovo/types-chrome-extension" />
+
+// Now chrome is available globally in this file
+const tabs = await chrome.tabs.query({ active: true });
 ```
 
 ## Features

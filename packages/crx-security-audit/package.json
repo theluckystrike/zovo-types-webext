@@ -5,6 +5,9 @@
   "bin": {
     "crx-security-audit": "./dist/cli.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -24,5 +27,12 @@
     "xss",
     "csp"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/zovo-types-webext"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
