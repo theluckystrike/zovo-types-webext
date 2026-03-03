@@ -86,7 +86,7 @@ jobs:
 
   publish:
     needs: [test, quality, build]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.NPM_TOKEN != ''
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -163,7 +163,7 @@ jobs:
 
   release:
     needs: [publish]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.NPM_TOKEN != ''
     runs-on: ubuntu-latest
     permissions:
       contents: write
