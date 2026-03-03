@@ -1,6 +1,15 @@
 # @zovo/types-webext
 
+[![npm version](https://img.shields.io/npm/v/@zovo/types-chrome-extension)](https://npmjs.com/package/@zovo/types-chrome-extension)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![CI Status](https://github.com/theluckystrike/zovo-types-webext/actions/workflows/ci.yml/badge.svg)](https://github.com/theluckystrike/zovo-types-webext/actions)
+[![Discord](https://img.shields.io/badge/Discord-Zovo-blueviolet.svg?logo=discord)](https://discord.gg/zovo)
+[![GitHub Stars](https://img.shields.io/github/stars/theluckystrike/zovo-types-webext?style=social)](https://github.com/theluckystrike/zovo-types-webext)
+
 Comprehensive TypeScript type definitions for browser extensions across Chrome, Firefox, Safari, and Edge.
+
+Part of the [Zovo](https://zovo.one) family of privacy-first Chrome extensions.
 
 ## Packages
 
@@ -112,7 +121,34 @@ npm run build
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
 
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Make your changes
+4. Run validation: `npm run validate`
+5. Submit a Pull Request
+
+## See Also
+
+### Related Zovo Repositories
+
+- [zovo-extension-template](https://github.com/theluckystrike/zovo-extension-template) - Boilerplate for building privacy-first Chrome extensions
+- [zovo-chrome-extensions](https://github.com/theluckystrike/zovo-chrome-extensions) - Collection of Zovo Chrome extensions
+- [zovo-indexer](https://github.com/theluckystrike/zovo-indexer) - SEO indexing tool
+- [zovo-permissions-scanner](https://github.com/theluckystrike/zovo-permissions-scanner) - Privacy scanner for Chrome extensions
+- [zovo-content](https://github.com/theluckystrike/zovo-content) - Marketing content for Zovo extensions
+- [webext-bridge](https://github.com/theluckystrike/webext-bridge) - Cross-context messaging for WebExtensions
+- [webext-storage-sync](https://github.com/theluckystrike/webext-storage-sync) - Cross-device storage sync
+
+### Chrome Web Store Extensions Using These Types
+
+- [Zovo Tab Manager](https://chrome.google.com/webstore/detail/zovo-tab-manager) - Tab management made simple
+- [Zovo Focus](https://chrome.google.com/webstore/detail/zovo-focus) - Stay focused with distraction blocking
+- [Zovo Permissions Scanner](https://chrome.google.com/webstore/detail/zovo-permissions-scanner) - Check extension privacy grades
+
+Visit [zovo.one](https://zovo.one) for more information.
+
 ## License
 
-MIT
-# test
+MIT - [Zovo](https://zovo.one)
