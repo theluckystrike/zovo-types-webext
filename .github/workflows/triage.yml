@@ -6,9 +6,13 @@ on:
   pull_request:
     types: [opened, synchronize]
 
+permissions:
+  contents: read
+
 jobs:
   triage:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@v4
     
